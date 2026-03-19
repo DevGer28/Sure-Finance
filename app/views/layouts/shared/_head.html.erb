@@ -23,9 +23,16 @@
   <meta name="msapplication-TileColor" content="#F9F9F9">
   <meta name="theme-color" content="#F9F9F9">
 
+  <% favicon_version = "we-promise-sure-favicon-20260318" %>
   <link rel="manifest" href="<%= pwa_manifest_path %>">
-  <link rel="apple-touch-icon" href="/logo-pwa.png">
-  <link rel="apple-touch-icon" sizes="512x512" href="/logo-pwa.png">
+  <link rel="icon" href="/favicon.ico?v=<%= favicon_version %>" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico?v=<%= favicon_version %>">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=<%= favicon_version %>">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=<%= favicon_version %>">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=<%= favicon_version %>">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=<%= favicon_version %>">
+  <link rel="apple-touch-icon" sizes="512x512" href="/logo-pwa.png?v=<%= favicon_version %>">
+  <link rel="icon" sizes="192x192" type="image/png" href="/android-chrome-192x192.png?v=<%= favicon_version %>">
 
   <% if Rails.env.production? && (posthog_config = Rails.configuration.x.posthog).try(:api_key).present? %>
     <%= render "shared/posthog", posthog_api_key: posthog_config.api_key, posthog_host: posthog_config.host %>
