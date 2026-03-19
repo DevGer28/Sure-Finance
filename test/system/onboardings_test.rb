@@ -113,7 +113,7 @@ class OnboardingsTest < ApplicationSystemTestCase
     select "Spanish (es)", from: "user_family_attributes_locale"
     select "Euro (EUR)", from: "user_family_attributes_currency"
     select "DD/MM/YYYY", from: "user_family_attributes_date_format"
-    select "Dark", from: "user_theme"
+    select I18n.t("onboardings.preferences.theme_dark", locale: :es), from: "user_theme"
 
     # Button text is in Spanish due to locale preview
     click_button I18n.t("onboardings.preferences.submit", locale: :es)
@@ -126,6 +126,7 @@ class OnboardingsTest < ApplicationSystemTestCase
     @user.reload
 
     assert_equal "es", @family.locale
+    assert_equal "es", @user.locale
     assert_equal "EUR", @family.currency
     assert_equal "%d/%m/%Y", @family.date_format
     assert_equal "dark", @user.theme

@@ -13,12 +13,25 @@ es:
     edit:
       edit: Editar categoría
     form:
+      auto_adjust: ajustar automáticamente.
+      classification_label: Clasificación
+      classifications:
+        expense: Gasto
+        income: Ingreso
+      color: Color
+      icon: Icono
+      name_label: Nombre
+      parent_category_optional: Categoría padre (opcional)
       placeholder: Nombre de la categoría
+      poor_contrast: Poco contraste, elige un color más oscuro o
+      unassigned: "(sin asignar)"
     index:
+      all_categories: todas las categorías
       bootstrap: Usar predeterminadas (recomendado)
       categories: Categorías
       categories_expenses: Categorías de gastos
       categories_incomes: Categorías de ingresos
+      delete_all: Eliminar todas
       empty: No se encontraron categorías
       new: Nueva categoría
     menu:

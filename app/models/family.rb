@@ -83,7 +83,12 @@ class Family < ApplicationRecord
   # Returns the Investment Contributions category for this family, or nil if not found.
   # This is a bootstrapped category used for auto-categorizing transfers to investment accounts.
   def investment_contributions_category
-    categories.find_by(name: Category.investment_contributions_name)
+    translated_names = I18n.available_locales
+      .map { |locale| I18n.t(Category::INVESTMENT_CONTRIBUTIONS_NAME_KEY, locale: locale, default: nil) }
+      .compact
+      .uniq
+
+    categories.where(name: translated_names).first
   end
 
   # Returns account IDs for tax-advantaged accounts (401k, IRA, HSA, etc.)

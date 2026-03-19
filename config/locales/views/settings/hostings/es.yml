@@ -2,64 +2,132 @@
 es:
   settings:
     hostings:
+      brand_fetch_settings:
+        description: Introduce el ID de Cliente proporcionado por Brand Fetch
+        env_configured_message: Configurado correctamente mediante la variable de
+          entorno BRAND_FETCH_CLIENT_ID.
+        high_res_description: Cuando está activado, los logos se obtendrán a resolución
+          120x120 en lugar de 40x40. Esto proporciona imágenes más nítidas en pantallas
+          de alta densidad.
+        high_res_label: Activar logos en alta resolución
+        label: ID de Cliente
+        placeholder: Introduce tu ID de Cliente aquí
+        setup_steps:
+          logo_api: API de logos
+          step1_html: Visita %{link} y crea una cuenta gratuita de Brand Fetch Developer.
+          step2_html: Ve a la página de %{link}.
+          step3_html: Revela tu <strong>ID de Cliente</strong> y pégalo abajo.
+        show_details: " (mostrar detalles)"
+        title: Configuración de Brand Fetch
+      clear_cache:
+        cache_cleared: La caché de datos ha sido limpiada. Esto puede tardar unos
+          momentos en completarse.
       invite_code_settings:
-        description: Controla cómo se registran nuevas personas en tu instancia de %{product}.
-        email_confirmation_description: Cuando está habilitado, los usuarios deben confirmar su dirección de correo electrónico al cambiarla.
+        description: Controla cómo se registran nuevas personas en tu instancia de
+          %{product}.
+        email_confirmation_description: Cuando está habilitado, los usuarios deben
+          confirmar su dirección de correo electrónico al cambiarla.
         email_confirmation_title: Requerir confirmación de correo electrónico
         generate_tokens: Generar nuevo código
         generated_tokens: Códigos generados
-        title: Incorporación
         states:
-          open: Abierto
           closed: Cerrado
           invite_only: Solo con invitación
-      show:
-        general: Configuración General
-        financial_data_providers: Proveedores de Datos Financieros
-        invites: Códigos de Invitación
-        title: Autoalojamiento
-        danger_zone: Zona de Peligro
-        clear_cache: Limpiar caché de datos
-        clear_cache_warning: Limpiar la caché de datos eliminará todos los tipos de cambio, precios de valores, 
-          saldos de cuentas y otros datos. Esto no eliminará cuentas, transacciones, categorías u otros datos propiedad del usuario.
-        confirm_clear_cache:
-          title: ¿Limpiar caché de datos?
-          body: ¿Estás seguro de que deseas limpiar la caché de datos? Esto eliminará todos los tipos de cambio, 
-            precios de valores, saldos de cuentas y otros datos. Esta acción no se puede deshacer.
-      brand_fetch_settings:
-        description: Introduce el ID de Cliente proporcionado por Brand Fetch
-        label: ID de Cliente
-        placeholder: Introduce tu ID de Cliente aquí
-        title: Configuración de Brand Fetch
+          open: Abierto
+        title: Incorporación
+      not_authorized: No estás autorizado para realizar esta acción
       openai_settings:
-        description: Introduce el token de acceso y, opcionalmente, configura un proveedor compatible con OpenAI personalizado
-        env_configured_message: Configurado con éxito a través de variables de entorno.
         access_token_label: Token de Acceso
         access_token_placeholder: Introduce tu token de acceso aquí
-        uri_base_label: URL Base de la API (Opcional)
-        uri_base_placeholder: "https://api.openai.com/v1 (por defecto)"
+        description: Introduce el token de acceso y, opcionalmente, configura un proveedor
+          compatible con OpenAI personalizado
+        env_configured_message: Configurado con éxito a través de variables de entorno.
+        json_mode_auto: Auto (recomendado)
+        json_mode_help: El modo estricto funciona mejor con modelos de razonamiento
+          (qwen-thinking, deepseek-reasoner). El modo ninguno funciona mejor con
+          modelos estándar (llama, mistral, gpt-oss).
+        json_mode_json_object: Objeto JSON
+        json_mode_label: Modo JSON
+        json_mode_none: Ninguno (mejor para modelos estándar)
+        json_mode_strict: Estricto (mejor para modelos de razonamiento)
         model_label: Modelo (Opcional)
-        model_placeholder: "gpt-4.1 (por defecto)"
+        model_placeholder: gpt-4.1 (por defecto)
         title: OpenAI
-      yahoo_finance_settings:
-        title: Yahoo Finance
-        description: Yahoo Finance proporciona acceso gratuito a precios de acciones, tipos de cambio y datos financieros sin necesidad de una clave API.
-        status_active: Yahoo Finance está activo y funcionando
-        status_inactive: La conexión con Yahoo Finance falló
-        connection_failed: No se pudo conectar con Yahoo Finance
-        troubleshooting: Verifica tu conexión a internet y la configuración del firewall. Yahoo Finance puede estar temporalmente no disponible.
+        uri_base_label: URL Base de la API (Opcional)
+        uri_base_placeholder: https://api.openai.com/v1 (por defecto)
+      provider_selection:
+        description: Elige qué servicio usar para obtener tipos de cambio y precios
+          de valores. Yahoo Finance es gratuito y no requiere clave API. Twelve Data
+          requiere una clave API gratuita, pero puede ofrecer mayor cobertura de datos.
+        env_configured_message: La selección de proveedor está deshabilitada porque
+          hay variables de entorno configuradas (EXCHANGE_RATE_PROVIDER o SECURITIES_PROVIDER).
+          Para habilitarla aquí, elimina esas variables de tu configuración.
+        exchange_rate_provider_label: Proveedor de tipo de cambio
+        providers:
+          twelve_data: Twelve Data
+          yahoo_finance: Yahoo Finance
+        securities_provider_label: Proveedor de valores (precios de acciones)
+        title: Selección de proveedor
+      show:
+        clear_cache: Limpiar caché de datos
+        clear_cache_warning: Limpiar la caché de datos eliminará todos los tipos de
+          cambio, precios de valores, saldos de cuentas y otros datos. Esto no eliminará
+          cuentas, transacciones, categorías u otros datos propiedad del usuario.
+        confirm_clear_cache:
+          body: "¿Estás seguro de que deseas limpiar la caché de datos? Esto eliminará
+            todos los tipos de cambio, precios de valores, saldos de cuentas y otros
+            datos. Esta acción no se puede deshacer."
+          title: "¿Limpiar caché de datos?"
+        danger_zone: Zona de Peligro
+        financial_data_providers: Proveedores de Datos Financieros
+        general: Configuración General
+        invites: Códigos de Invitación
+        sync_settings: Configuración de sincronización
+        title: Autoalojamiento
+      sync_settings:
+        auto_sync_description: Cuando está activado, todas las cuentas se sincronizan
+          automáticamente cada día a la hora indicada.
+        auto_sync_label: Activar sincronización automática
+        auto_sync_time_description: Especifica la hora del día en la que debe ocurrir
+          la sincronización automática.
+        auto_sync_time_label: Hora de sincronización (HH:MM)
+        env_configured_message: Esta configuración está deshabilitada porque hay
+          una variable de entorno del proveedor configurada (SIMPLEFIN_INCLUDE_PENDING
+          o PLAID_INCLUDE_PENDING). Elimínala para habilitar esta opción.
+        include_pending_description: Cuando está activado, se importan transacciones
+          pendientes (no conciliadas) y se reconcilian automáticamente al contabilizarse.
+          Desactívalo si tu banco provee datos de pendientes poco fiables.
+        include_pending_label: Incluir transacciones pendientes
       twelve_data_settings:
         api_calls_used: "%{used} / %{limit} llamadas diarias a la API utilizadas (%{percentage})"
         description: Introduce la clave API proporcionada por Twelve Data
-        env_configured_message: Configurado con éxito a través de la variable de entorno TWELVE_DATA_API_KEY.
+        env_configured_message: Configurado con éxito a través de la variable de entorno
+          TWELVE_DATA_API_KEY.
         label: Clave API
         placeholder: Introduce tu clave API aquí
         plan: Plan %{plan}
+        setup_steps:
+          api_keys: Claves API
+          step1_html: Visita %{link} y crea una cuenta gratuita de Twelve Data Developer.
+          step2_html: Ve a la página de %{link}.
+          step3_html: Revela tu <strong>Secret Key</strong> y pégala abajo.
+        show_details: " (mostrar detalles)"
         title: Twelve Data
       update:
         failure: Valor de configuración inválido
-        success: Configuración actualizada
         invalid_onboarding_state: Estado de incorporación inválido
-      clear_cache:
-        cache_cleared: La caché de datos ha sido limpiada. Esto puede tardar unos momentos en completarse.
-      not_authorized: No estás autorizado para realizar esta acción
+        invalid_sync_time: Formato de hora inválido. Usa el formato HH:MM (por ejemplo,
+          02:30).
+        scheduler_sync_failed: La configuración se guardó, pero no se pudo actualizar
+          la programación de sincronización. Inténtalo de nuevo o revisa los logs
+          del servidor.
+        success: Configuración actualizada
+      yahoo_finance_settings:
+        connection_failed: No se pudo conectar con Yahoo Finance
+        description: Yahoo Finance proporciona acceso gratuito a precios de acciones,
+          tipos de cambio y datos financieros sin necesidad de una clave API.
+        status_active: Yahoo Finance está activo y funcionando
+        status_inactive: La conexión con Yahoo Finance falló
+        title: Yahoo Finance
+        troubleshooting: Verifica tu conexión a internet y la configuración del firewall.
+          Yahoo Finance puede estar temporalmente no disponible.

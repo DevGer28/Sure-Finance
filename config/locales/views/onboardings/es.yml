@@ -1,9 +1,23 @@
 ---
 es:
   onboardings:
+    goals:
+      title: "¿Qué te trae por aquí?"
+      subtitle: Selecciona uno o más objetivos que tengas al usar %{product_name} como herramienta de finanzas personales.
+      submit: Siguiente
+      goals:
+        ai_insights: Dejar que la IA me ayude a entender mis finanzas
+        budgeting: Gestionar planes financieros y presupuestos
+        cashflow: Entender flujo de caja y gastos
+        investments: Seguir mis inversiones
+        optimization: Analizar y optimizar cuentas
+        partner: Gestionar finanzas con mi pareja
+        reduce_stress: Reducir estrés o ansiedad financiera
+        unified_accounts: Ver todas mis cuentas en un solo lugar
     header:
       sign_out: Cerrar sesión
     preferences:
+      as_of: a fecha de %{date}
       currency: Moneda
       date_format: Formato de fecha
       example: Cuenta de ejemplo
@@ -11,6 +25,10 @@ es:
       preview: Previsualiza cómo se muestran los datos según tus preferencias.
       submit: Completar
       subtitle: Vamos a configurar tus preferencias.
+      theme_dark: Oscuro
+      theme_label: Tema de color
+      theme_light: Claro
+      theme_system: Sistema
       title: Configura tus preferencias
     profile:
       country: País
@@ -22,7 +40,23 @@ es:
       subtitle: Vamos a completar tu perfil.
       title: Vamos a configurar lo básico
     show:
-      message: Estamos muy emocionados de que estés aquí. En el siguiente paso te 
-        haremos unas preguntas para completar tu perfil y luego configuraremos todo para ti.
+      message: Estamos muy emocionados de que estés aquí. En el siguiente paso te
+        haremos unas preguntas para completar tu perfil y luego configuraremos todo
+        para ti.
       setup: Configurar cuenta
       title: Bienvenido a %{product_name}
+    trial:
+      continue_button: Continuar prueba
+      description_html: Desde hoy puedes probar bien el producto. <br/>Si te gusta, autoalójalo o contribuye para seguir usándolo aquí.
+      how_it_works_title: Cómo funciona aquí
+      start_button: Probar Sure por %{days} días
+      subtitle: Luego los datos se eliminarán
+      timeline:
+        delete_description: Eliminaremos tus datos; contribuye para seguir usando %{product_name} aquí.
+        delete_title: En %{days} días (%{date})
+        reminder_description: Te notificaremos para recordarte que exportes tus datos.
+        reminder_title: En %{days} días (%{date})
+        today_description: Tendrás acceso gratis a %{product_name} por %{days} días en nuestro AWS.
+        today_title: Hoy
+      title: Prueba Sure por %{days} días
+      upgrade_button: Mejorar plan

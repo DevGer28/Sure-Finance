@@ -1,0 +1,17 @@
+---
+es:
+  UI:
+    account:
+      activity_feed:
+        toggle_selection_checkboxes: Toggle selection checkboxes
+  imports:
+    empty:
+      message: Message
+  settings:
+    hostings:
+      sync_auto_sync_scheduler!:
+        scheduler_sync_failed: Scheduler sync failed
+  snaptrade_items:
+    setup_accounts:
+      sync_start_date_help: Leave blank for all available history
+      sync_start_date_label: 'Import transactions from:'

@@ -32,6 +32,23 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal "es", @user.reload.locale
   end
 
+  test "uses family locale when user locale is not submitted" do
+    @user.update!(locale: nil)
+
+    patch user_url(@user), params: {
+      user: {
+        redirect_to: "goals",
+        family_attributes: {
+          locale: "es"
+        }
+      }
+    }
+
+    assert_redirected_to goals_onboarding_url
+    assert_equal "es", @user.reload.locale
+    assert_equal "es", @user.family.reload.locale
+  end
+
   test "admin can reset family data" do
     account = accounts(:investment)
     category = categories(:income)

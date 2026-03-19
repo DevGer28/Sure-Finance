@@ -30,4 +30,29 @@ class CategoryTest < ActiveSupport::TestCase
 
     assert_equal "Validation failed: Parent can't have more than 2 levels of subcategories", error.message
   end
+
+  test "bootstrap uses family locale for default category names" do
+    spanish_family = Family.create!(name: "Familia ES", locale: "es")
+
+    spanish_family.categories.bootstrap!
+
+    assert_equal 22, spanish_family.categories.count
+    assert spanish_family.categories.exists?(name: "Ingresos")
+    assert spanish_family.categories.exists?(name: "Comida y bebida")
+  end
+
+  test "bootstrap does not duplicate categories when family locale changes" do
+    family = Family.create!(name: "Locale Switch Family", locale: "en")
+
+    family.categories.bootstrap!
+    assert_equal 22, family.categories.count
+    assert family.categories.exists?(name: "Income")
+
+    family.update!(locale: "es")
+    family.categories.bootstrap!
+
+    assert_equal 22, family.categories.count
+    assert family.categories.exists?(name: "Ingresos")
+    assert_not family.categories.exists?(name: "Income")
+  end
 end

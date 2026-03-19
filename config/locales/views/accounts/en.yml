@@ -2,6 +2,7 @@
 en:
   accounts:
     account:
+      complete_setup: Complete setup
       link_lunchflow: Link with Lunch Flow
       link_provider: Link with provider
       unlink_provider: Unlink from provider
@@ -37,6 +38,12 @@ en:
     sync_all:
       syncing: "Syncing accounts..."
     new:
+      container:
+        close: Close
+        navigate: Navigate
+        next: Next
+        previous: Previous
+        select: Select
       import_accounts: Import accounts
       method_selector:
         connected_entry: Link account
@@ -71,6 +78,7 @@ en:
         balance: Balance
         owed: Amount owed
       menu:
+        account_resource: account
         confirm_accept: Delete "%{name}"
         confirm_body_html: "<p>By deleting this account, you will erase its value
           history, affecting various aspects of your overall account. This action
@@ -78,6 +86,7 @@ en:
           graphs.</p><br /> <p>After deletion, there is no way you'll be able to restore
           the account information because you'll need to add it as a new account.</p>"
         confirm_title: Delete account?
+        delete_account: Delete account
         edit: Edit
         import: Import transactions
         import_trades: Import trades

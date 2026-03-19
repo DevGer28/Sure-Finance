@@ -1,6 +1,17 @@
 ---
 en:
   mercury_items:
+    api_error:
+      check_provider_settings: Check Provider Settings
+      common_issues_title: Common issues
+      issues:
+        expired_credentials_html: "<strong>Expired credentials:</strong> Generate a new API token from Mercury."
+        insufficient_permissions_html: "<strong>Insufficient permissions:</strong> Ensure your token has read-only access."
+        invalid_api_token_html: "<strong>Invalid API token:</strong> Check your API token in Provider Settings."
+        network_issue_html: "<strong>Network issue:</strong> Check your internet connection."
+        service_down_html: "<strong>Service down:</strong> Mercury API may be temporarily unavailable."
+      title: Mercury Connection Error
+      unable_to_connect_title: Unable to connect to Mercury
     create:
       success: Mercury connection created successfully
     destroy:
@@ -136,6 +147,17 @@ en:
       sync_start_date_help: Select how far back you want to sync transaction history. Maximum 3 years of history available.
       sync_start_date_label: "Start syncing transactions from:"
       title: Set Up Your Mercury Accounts
+    setup_required:
+      description: Before you can link Mercury accounts, you need to configure your Mercury API token.
+      go_to_provider_settings: Go to Provider Settings
+      setup_steps:
+        step1_html: Go to <strong>Settings > Providers</strong>
+        step2_html: Find the <strong>Mercury</strong> section
+        step3: Enter your Mercury API token
+        step4: Return here to link your accounts
+      setup_steps_title: Setup steps
+      title: Mercury Setup Required
+      token_not_configured_title: API Token Not Configured
     complete_account_setup:
       all_skipped: "All accounts were skipped. No accounts were created."
       creation_failed: "Failed to create accounts: %{error}"

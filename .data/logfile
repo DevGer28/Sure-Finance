@@ -1,0 +1,13 @@
+2026-01-26 22:29:57.039 CST [52098] LOG:  starting PostgreSQL 14.20 (Homebrew) on aarch64-apple-darwin25.1.0, compiled by Apple clang version 17.0.0 (clang-1700.4.4.1), 64-bit
+2026-01-26 22:29:57.046 CST [52098] LOG:  listening on IPv6 address "::1", port 5432
+2026-01-26 22:29:57.046 CST [52098] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-01-26 22:29:57.047 CST [52098] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2026-01-26 22:29:57.049 CST [52099] LOG:  database system was shut down at 2026-01-26 22:29:48 CST
+2026-01-26 22:29:57.052 CST [52098] LOG:  database system is ready to accept connections
+2026-01-26 22:30:17.900 CST [52536] FATAL:  database "sure_development" does not exist
+2026-01-26 22:30:18.337 CST [52542] FATAL:  database "sure_development" does not exist
+2026-01-26 22:30:19.283 CST [52575] FATAL:  database "sure_test" does not exist
+2026-02-01 15:18:11.155 CST [52098] LOG:  received smart shutdown request
+2026-02-01 15:18:11.163 CST [52098] LOG:  background worker "logical replication launcher" (PID 52105) exited with exit code 1
+2026-02-01 15:18:11.164 CST [52100] LOG:  shutting down
+2026-02-01 15:18:11.216 CST [52098] LOG:  database system is shut down

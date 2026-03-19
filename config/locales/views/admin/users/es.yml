@@ -1,0 +1,27 @@
+---
+es:
+  admin:
+    users:
+      index:
+        description: Administre roles de usuario para su instancia. Los superadministradores
+          pueden acceder a la configuración del proveedor de SSO y a la administración
+          de usuarios.
+        no_users: No se encontraron usuarios.
+        role_descriptions:
+          admin: Administrador familiar. Puede acceder a configuraciones avanzadas
+            como claves API, importaciones y avisos de IA.
+          member: Acceso de usuario básico. Puede administrar sus propias cuentas,
+            transacciones y configuraciones.
+          super_admin: Administrador de instancia. Puede administrar proveedores de
+            SSO, roles de usuario y hacerse pasar por usuarios para obtener soporte.
+        role_descriptions_title: Descripciones de roles
+        roles:
+          admin: Administración
+          member: Miembro
+          super_admin: Súper administrador
+        section_title: Usuarios
+        title: Gestión de usuarios
+        you: "(Tú)"
+      update:
+        failure: No se pudo actualizar la función del usuario.
+        success: Rol de usuario actualizado correctamente.

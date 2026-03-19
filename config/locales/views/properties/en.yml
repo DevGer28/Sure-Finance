@@ -1,8 +1,32 @@
 ---
 en:
   properties:
+    overview_fields:
+      name_label: Name
+      name_placeholder: Vacation home
+      select_type: Select type
+      property_type_label: Property type
+      year_built_optional_label: Year Built (optional)
+      year_built_placeholder: "1990"
+      area_optional_label: Area (optional)
+      area_placeholder: "1200"
+      area_unit_label: Area Unit
+      square_feet: Square Feet
+      square_meters: Square Meters
+    address:
+      title: Enter property manually
+      save: Save
+    balances:
+      estimated_market_value: Estimated market value
+      estimated_market_value_tooltip: The estimated market value of your property. This number can often be found on sites like Zillow or Redfin, and is never an exact number.
     edit:
       edit: Edit %{account}
+    form_actions:
+      next: Next
+    form_tabs:
+      address: Address
+      overview: Overview
+      value: Value
     form:
       address_line1: Street address
       address_line1_placeholder: 123 Main St
@@ -30,3 +54,12 @@ en:
       trend: Trend
       unknown: Unknown
       year_built: Year Built
+    tabs:
+      overview:
+        edit_account_details: Edit account details
+        living_area: Living area
+        market_value: Market value
+        purchase_price: Purchase price
+        trend: Trend
+        unknown: Unknown
+        year_built: Year built

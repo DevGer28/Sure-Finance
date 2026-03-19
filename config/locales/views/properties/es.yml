@@ -1,8 +1,32 @@
 ---
 es:
   properties:
+    overview_fields:
+      name_label: Nombre
+      name_placeholder: Casa de vacaciones
+      select_type: Selecciona tipo
+      property_type_label: Tipo de propiedad
+      year_built_optional_label: Año de construcción (opcional)
+      year_built_placeholder: "1990"
+      area_optional_label: Área (opcional)
+      area_placeholder: "1200"
+      area_unit_label: Unidad de área
+      square_feet: Pies cuadrados
+      square_meters: Metros cuadrados
+    address:
+      title: Introducir propiedad manualmente
+      save: Guardar
+    balances:
+      estimated_market_value: Valor de mercado estimado
+      estimated_market_value_tooltip: El valor de mercado estimado de tu propiedad. Este dato suele encontrarse en sitios como Zillow o Redfin, y nunca es una cifra exacta.
     edit:
       edit: Editar %{account}
+    form_actions:
+      next: Siguiente
+    form_tabs:
+      address: Dirección
+      overview: Resumen
+      value: Valor
     form:
       address_line1: Dirección
       address_line1_placeholder: Calle Principal 123
@@ -30,3 +54,12 @@ es:
       trend: Tendencia
       unknown: Desconocido
       year_built: Año de Construcción
+    tabs:
+      overview:
+        edit_account_details: Editar detalles de la cuenta
+        living_area: Área habitable
+        market_value: Valor de mercado
+        purchase_price: Precio de compra
+        trend: Tendencia
+        unknown: Desconocido
+        year_built: Año de construcción

@@ -1,6 +1,35 @@
 ---
 es:
   valuations:
+    confirm_create:
+      action_verb: establecer
+      submit: Confirmar
+      title: Confirmar nuevo saldo
+    confirm_update:
+      action_verb: actualizar
+      submit: Actualizar
+      title: Actualizar saldo
+    confirmation_contents:
+      account_type_labels:
+        balance: saldo
+        credit_card: saldo de tarjeta de crédito
+        crypto: saldo de cripto
+        depository: saldo de cuenta
+        loan: saldo de préstamo
+        other_asset: valor del activo
+        other_liability: saldo del pasivo
+        property: valor de la propiedad
+        vehicle: valor del vehículo
+      brokerage_cash: Efectivo de corretaje
+      future_recalculation: Todas las transacciones y saldos futuros se recalcularán
+        en función de esta %{update_type}.
+      holdings_value: Valor de posiciones
+      investment_summary_intro_html: "Esto va a %{action_verb} el valor de la cuenta el <span class=\"font-medium text-primary\">%{date}</span> a:"
+      non_investment_summary_html: "%{action_verb} %{account_label} el <span class=\"font-medium text-primary\">%{date}</span> a <span class=\"font-medium text-primary\">%{amount}</span>."
+      total_account_value: Valor total de la cuenta
+      update_types:
+        change: cambio
+        update: actualización
     form:
       amount: Importe
       submit: Añadir actualización de saldo
@@ -14,8 +43,11 @@ es:
       valuations: Valor
       value: valor
     new:
+      amount: Importe
+      submit: Enviar
       title: Nuevo saldo
     show:
+      account_value_on_date: Valor de la cuenta en la fecha
       amount: Importe
       date_label: Fecha
       delete: Eliminar
@@ -28,3 +60,4 @@ es:
       note_placeholder: Añade cualquier detalle adicional sobre esta entrada
       overview: Resumen
       settings: Configuración
+      update_value: Actualizar valor

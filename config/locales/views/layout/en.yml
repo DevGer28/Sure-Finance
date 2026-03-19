@@ -14,7 +14,12 @@ en:
       sign_in: Sign in
       sign_up: Create account
     shared:
+      confirm_dialog:
+        title: Are you sure?
+        subtitle: This action cannot be undone.
+        confirm: Confirm
       footer:
+        copyright: "© %{year}, %{brand_name} %{product_name} (community fork of Maybe Finance)"
         privacy_policy: Privacy Policy
         terms_of_service: Terms of Service
     trial:

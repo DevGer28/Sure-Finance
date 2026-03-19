@@ -1,0 +1,142 @@
+---
+es:
+  admin:
+    unauthorized: No estás autorizado para acceder a esta área.
+    sso_providers:
+      index:
+        title: Proveedores SSO
+        description: Administra los proveedores de autenticación de inicio de sesión único para tu instancia.
+        restart_notice: Los cambios requieren reiniciar el servidor para surtir efecto.
+        configured_providers_title: Proveedores configurados
+        add_provider: Agregar proveedor
+        no_providers_title: Sin proveedores SSO
+        no_providers_message: Aún no hay proveedores SSO configurados.
+        note: Los cambios en proveedores SSO requieren reiniciar el servidor. Como alternativa, habilita AUTH_PROVIDERS_SOURCE=db para cargar proveedores dinámicamente desde la base de datos.
+        table:
+          name: Nombre
+          strategy: Estrategia
+          status: Estado
+          issuer: Emisor
+          actions: Acciones
+          enabled: Activado
+          disabled: Desactivado
+        actions:
+          edit: Editar
+          delete: Eliminar
+          enable: Activar
+          disable: Desactivar
+        legacy_providers_title: Proveedores configurados por entorno
+        legacy_providers_notice: Estos proveedores se configuran mediante variables de entorno o YAML y no se pueden administrar desde esta interfaz. Para gestionarlos aquí, migra a proveedores en base de datos habilitando AUTH_PROVIDERS_SOURCE=db y recreándolos en la UI.
+        env_configured: Entorno/YAML
+        configuration_mode_title: Modo de configuración
+        database_backed_title: Proveedores respaldados por base de datos
+        database_backed_description: Carga los proveedores desde la base de datos en lugar de la configuración YAML.
+        auth_providers_source_html: Configura %{value} para habilitar proveedores en base de datos.
+        no_restart_needed: Esto permite cambios sin reiniciar el servidor.
+      new:
+        title: Agregar proveedor SSO
+        description: Configura un nuevo proveedor de autenticación de inicio de sesión único.
+        provider_configuration: Configuración del proveedor
+      edit:
+        title: Editar proveedor SSO
+        title_with_label: Editar %{label}
+        description: Actualizar configuración de %{label}.
+      create:
+        success: El proveedor SSO se creó correctamente.
+      update:
+        success: El proveedor SSO se actualizó correctamente.
+      destroy:
+        success: El proveedor SSO se eliminó correctamente.
+        confirm: "¿Seguro que quieres eliminar este proveedor? Esta acción no se puede deshacer."
+      toggle:
+        success_enabled: El proveedor SSO se activó correctamente.
+        success_disabled: El proveedor SSO se desactivó correctamente.
+        confirm_enable: "¿Seguro que quieres activar este proveedor?"
+        confirm_disable: "¿Seguro que quieres desactivar este proveedor?"
+      form:
+        basic_information: Información básica
+        oauth_configuration: Configuración OAuth/OIDC
+        strategy_label: Estrategia
+        strategy_help: Estrategia de autenticación que se utilizará.
+        name_label: Nombre
+        name_placeholder: p. ej., openid_connect, keycloak, authentik
+        name_help: Identificador único (solo minúsculas, números y guiones bajos)
+        label_label: Etiqueta
+        label_placeholder: p. ej., Iniciar sesión con Keycloak
+        label_help: Texto del botón que verán los usuarios.
+        icon_label: Icono
+        icon_placeholder: p. ej., key, google, github
+        icon_help: Nombre del icono de Lucide para el botón de login.
+        enabled_label: Habilitar este proveedor
+        enabled_help: Los usuarios pueden iniciar sesión con este proveedor cuando está habilitado.
+        issuer_label: Emisor
+        issuer_placeholder: https://accounts.google.com
+        issuer_help: URL del emisor OIDC (valida .well-known/openid-configuration).
+        client_id_label: ID de cliente
+        client_id_placeholder: tu-id-de-cliente
+        client_id_help: ID de cliente OAuth de tu proveedor de identidad.
+        client_secret_label: Secreto del cliente
+        client_secret_placeholder_new: tu-secreto-de-cliente
+        client_secret_placeholder_existing: "••••••••"
+        client_secret_help: Secreto de cliente OAuth (cifrado en base de datos).
+        client_secret_help_existing: Deja en blanco para conservar el secreto actual.
+        client_secret_keep_existing: Deja en blanco para conservar el secreto actual.
+        redirect_uri_label: URL de callback
+        redirect_uri_placeholder: https://tudominio.com/auth/openid_connect/callback
+        redirect_uri_help: Configura esta URL en tu proveedor de identidad.
+        copy_button: Copiar
+        copy_to_clipboard: Copiar al portapapeles
+        cancel: Cancelar
+        submit: Guardar proveedor
+        submit_create: Crear proveedor
+        submit_update: Actualizar proveedor
+        errors_title: "No se pudo guardar este proveedor (%{count} errores):"
+        provisioning_title: Aprovisionamiento de usuarios
+        default_role_label: Rol predeterminado para nuevos usuarios
+        default_role_help: Rol asignado a usuarios creados mediante aprovisionamiento SSO just-in-time (JIT). Por defecto es Miembro.
+        role_member: Miembro
+        role_admin: Administrador
+        role_super_admin: Superadministrador
+        role_mapping_title: Mapeo de grupos a rol (opcional)
+        role_mapping_help: Mapea grupos/claims del IdP a roles de la aplicación. Se asigna el rol más alto coincidente. Déjalo vacío para usar el rol predeterminado.
+        super_admin_groups: Grupos de superadministrador
+        admin_groups: Grupos de administrador
+        member_groups: Grupos de miembro
+        super_admin_groups_placeholder: Platform-Admins, IdP-Superusers
+        admin_groups_placeholder: Team-Leads, Managers
+        member_groups_placeholder: "* (todos los grupos)"
+        groups_help: Lista de nombres de grupos del IdP separada por comas. Usa * para coincidir con todos los grupos.
+        advanced_title: Configuración OIDC avanzada
+        scopes_label: Scopes personalizados
+        scopes_placeholder: openid email profile groups
+        scopes_help: Lista de scopes OIDC separados por espacios. Déjalo vacío para usar los predeterminados (openid email profile). Agrega "groups" para recuperar claims de grupos.
+        prompt_label: Prompt de autenticación
+        prompt_default: Predeterminado (decide el IdP)
+        prompt_login: Forzar inicio de sesión (reautenticar)
+        prompt_consent: Forzar consentimiento (reautorizar)
+        prompt_select_account: Selección de cuenta (elegir cuenta)
+        prompt_none: Sin prompt (autenticación silenciosa)
+        prompt_help: Controla cómo el IdP solicita autenticación al usuario.
+        test_connection: Probar conexión
+        saml_configuration: Configuración SAML
+        idp_metadata_url: URL de metadatos del IdP
+        idp_metadata_url_placeholder: https://idp.example.com/metadata
+        idp_metadata_url_help: URL de los metadatos SAML de tu IdP. Si se proporciona, el resto de la configuración SAML se completa automáticamente.
+        manual_saml_config: Configuración manual (si no usas URL de metadatos)
+        manual_saml_help: Usa estos campos solo si tu IdP no proporciona una URL de metadatos.
+        idp_sso_url: URL SSO del IdP
+        idp_sso_url_placeholder: https://idp.example.com/sso
+        idp_slo_url: URL SLO del IdP (opcional)
+        idp_slo_url_placeholder: https://idp.example.com/slo (opcional)
+        idp_certificate: Certificado del IdP
+        idp_certificate_placeholder: "-----BEGIN CERTIFICATE-----"
+        idp_certificate_help: Certificado X.509 en formato PEM. Requerido si no usas URL de metadatos.
+        idp_cert_fingerprint: Huella del certificado (alternativa)
+        idp_cert_fingerprint_placeholder: AB:CD:EF:...
+        name_id_format: Formato NameID
+        name_id_email: Correo electrónico (predeterminado)
+        name_id_persistent: Persistente
+        name_id_transient: Transitorio
+        name_id_unspecified: No especificado
+        sp_callback_url_label: URL de callback del SP (ACS URL)
+        sp_callback_url_help: Configura esta URL como Assertion Consumer Service URL en tu IdP.

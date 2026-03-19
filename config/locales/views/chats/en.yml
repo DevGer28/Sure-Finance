@@ -1,5 +1,37 @@
 ---
 en:
   chats:
+    ai_consent:
+      available_description: AI chat can answer financial questions and provide insights based on your data. To use this feature you'll need to explicitly enable it.
+      enable_button: Enable AI Chats
+      footer_note: Disable anytime. All data sent to our LLM providers is anonymized.
+      title: Enable AI Chats
+      unavailable_description_html: "To use the AI assistant, you need to set the <code class=\"bg-surface-inset px-1 py-0.5 rounded font-mono text-xs\">%{token}</code> environment variable or configure it in the Self-Hosting settings of your instance."
+    chat_form:
+      coming_soon: Coming soon
+      disclaimer: AI responses are informational only and are not financial advice.
+      placeholder: Ask anything ...
     demo_banner_title: "Demo Mode Active"
     demo_banner_message: "You are using an open-weights Qwen3 LLM with credits provided by Cloudflare Workers AI.  Result may vary since the codebase was mostly tested on `gpt-4.1` but your tokens don't go anywhere else to be trained with! 🤖"
+    error:
+      message: Failed to generate response. Please try again.
+      retry: Retry
+    greeting:
+      command_hint_prefix: "You can use"
+      command_hint_suffix: "to access commands"
+      fallback_name: there
+      intro: "Hey %{name}! I'm an AI/large-language-model that can help with your finances. I have access to the web and your account data."
+      questions_intro: "Here's a few questions you can ask:"
+      sample_questions:
+        evaluate_investment_portfolio: Evaluate investment portfolio
+        find_unusual_patterns: Find unusual patterns
+        show_spending_insights: Show spending insights
+    nav:
+      all_chats: All chats
+      chat_resource: chat
+      delete_chat: Delete chat
+      edit_chat_title: Edit chat title
+      start_new_chat: Start new chat
+    new_chat: New chat
+    time_ago: "%{time} ago"
+    title: Chats

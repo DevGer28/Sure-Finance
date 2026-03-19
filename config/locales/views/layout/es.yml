@@ -9,15 +9,20 @@ es:
         reports: Informes
         transactions: Transacciones
     auth:
-      existing_account: ¿Ya tienes una cuenta?
-      no_account: ¿Nuevo en %{product_name}?
+      existing_account: "¿Ya tienes una cuenta?"
+      no_account: "¿Nuevo en %{product_name}?"
       sign_in: Iniciar sesión
       sign_up: Crear cuenta
     shared:
+      confirm_dialog:
+        title: "¿Estás seguro?"
+        subtitle: Esta acción no se puede deshacer.
+        confirm: Confirmar
       footer:
+        copyright: "© %{year}, %{brand_name} %{product_name} (fork comunitario de Maybe Finance)"
         privacy_policy: Política de privacidad
         terms_of_service: Términos de servicio
     trial:
-      open_demo: Demo pública
-      data_deleted_in_days: Los datos se eliminarán en %{days} días
       contribute: Contribuir
+      data_deleted_in_days: Los datos se eliminarán en %{days} días
+      open_demo: Demo pública

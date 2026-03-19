@@ -11,6 +11,8 @@ es:
     form:
       placeholder: Nombre de la etiqueta
     index:
+      all_tags: todas las etiquetas
+      delete_all: Eliminar todas
       empty: Aún no hay etiquetas
       new: Nueva etiqueta
       tags: Etiquetas

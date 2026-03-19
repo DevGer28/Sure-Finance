@@ -4,9 +4,9 @@ class Rule::ConditionFilter
   TYPES = [ "text", "number", "select" ]
 
   OPERATORS_MAP = {
-    "text" => [ [ "Contains", "like" ], [ "Equal to", "=" ], [ "Is empty", "is_null" ] ],
-    "number" => [ [ "Greater than", ">" ], [ "Greater or equal to", ">=" ], [ "Less than", "<" ], [ "Less than or equal to", "<=" ], [ "Is equal to", "=" ] ],
-    "select" => [ [ "Equal to", "=" ], [ "Is empty", "is_null" ] ]
+    "text" => [ [ :contains, "like" ], [ :equal_to, "=" ], [ :is_empty, "is_null" ] ],
+    "number" => [ [ :greater_than, ">" ], [ :greater_or_equal_to, ">=" ], [ :less_than, "<" ], [ :less_than_or_equal_to, "<=" ], [ :is_equal_to, "=" ] ],
+    "select" => [ [ :equal_to, "=" ], [ :is_empty, "is_null" ] ]
   }
 
   def initialize(rule)
@@ -27,7 +27,7 @@ class Rule::ConditionFilter
   end
 
   def label
-    key.humanize
+    I18n.t("rules.condition_filters.labels.#{key}", default: key.humanize)
   end
 
   def options
@@ -35,7 +35,9 @@ class Rule::ConditionFilter
   end
 
   def operators
-    OPERATORS_MAP.dig(type)
+    OPERATORS_MAP.fetch(type).map do |operator_key, operator_value|
+      [ I18n.t("rules.condition_filters.operators.#{operator_key}", default: operator_key.to_s.humanize), operator_value ]
+    end
   end
 
   # Matchers can prepare the scope with joins by implementing this method

@@ -1,0 +1,121 @@
+---
+es:
+  balance_reconciliation:
+    labels:
+      adjustments: Ajustes
+      buys: Compras
+      change_in_brokerage_cash: Cambio en efectivo de corretaje
+      change_in_holdings_buys_sells: Cambio en posiciones (compras/ventas)
+      change_in_holdings_market_activity: Cambio en posiciones (movimiento de mercado)
+      charges: Cargos
+      end_balance: Saldo final calculado
+      end_principal: Principal final calculado
+      end_value: Valor final calculado
+      final_balance: Saldo final
+      final_principal: Principal final
+      final_value: Valor final
+      market_changes: Cambios de mercado
+      net_cash_flow: Flujo neto de caja
+      net_principal_change: Cambio neto del principal
+      net_value_change: Cambio neto de valor
+      payments: Pagos
+      sells: Ventas
+      start_balance: Saldo inicial
+      start_principal: Principal inicial
+      start_value: Valor inicial
+    tooltips:
+      account_balance_start_day: El saldo de la cuenta al inicio del día
+      account_end_balance_calculated: El saldo calculado tras todas las transacciones
+      account_final_balance_day: El saldo final de la cuenta para el día
+      account_net_cash_flow: Cambio neto del saldo por todas las transacciones del día
+      asset_end_value_calculated: El valor calculado tras todos los cambios
+      asset_final_value_day: El valor final del activo para el día
+      asset_manual_adjustments_appraisals: Ajustes manuales de valor o tasaciones
+      asset_net_value_change_day: Todos los cambios de valor, incluidas mejoras y depreciación
+      asset_value_start_day: El valor del activo al inicio del día
+      credit_card_balance_owed_start_day: El saldo adeudado al inicio del día
+      credit_card_final_balance_owed_day: El saldo final adeudado para el día
+      credit_card_new_charges_day: Nuevos cargos realizados durante el día
+      credit_card_payments_day: Pagos realizados a la tarjeta durante el día
+      crypto_end_balance_calculated: El saldo calculado tras toda la actividad
+      crypto_final_holdings_value_day: El valor final de las tenencias cripto para el día
+      crypto_holdings_value_start_day: El valor de las tenencias cripto al inicio del día
+      crypto_market_price_changes: Cambios de valor por movimientos de precio del mercado
+      crypto_purchases_day: Compras de cripto durante el día
+      crypto_sales_day: Ventas de cripto durante el día
+      investment_change_in_brokerage_cash: Cambio neto de efectivo por depósitos, retiros y operaciones
+      investment_change_in_holdings_buys_sells: Impacto en posiciones por compra y venta de valores
+      investment_change_in_holdings_market_activity: Cambio en valor de posiciones por movimientos de mercado
+      investment_end_balance_calculated: El saldo calculado tras toda la actividad
+      investment_final_portfolio_value_day: El valor final de la cartera para el día
+      investment_portfolio_value_start_day: El valor total de la cartera al inicio del día
+      loan_end_principal_calculated: El principal calculado tras todas las transacciones
+      loan_final_principal_day: El principal final adeudado para el día
+      loan_net_principal_change_day: Pagos de principal y nuevo endeudamiento durante el día
+      loan_principal_start_day: El principal adeudado al inicio del día
+      manual_adjustments: Conciliaciones manuales u otros ajustes
+  provider_sync_summary:
+    accounts:
+      institutions: 'Instituciones: %{count}'
+      linked: 'Vinculado: %{count}'
+      title: Cuentas
+      total: 'Total: %{count}'
+      unlinked: 'Desvinculado: %{count}'
+    health:
+      data_warnings: 'Advertencias de datos: %{count}'
+      duplicate_suggestions:
+        one: "%{count} posible revisión de necesidades duplicadas"
+        other: "%{count} posibles duplicados necesitan revisión"
+      errors: 'Errores: %{count}'
+      notices: 'Avisos: %{count}'
+      pending_reconciled:
+        one: "%{count} transacción pendiente duplicada conciliada"
+        other: "%{count} transacciones pendientes duplicadas conciliadas"
+      rate_limited: Tarifa limitada %{time_ago}
+      recently: recientemente
+      stale_pending:
+        one: "%{count} transacción pendiente obsoleta (excluida de los presupuestos)"
+        other: "%{count} transacciones pendientes obsoletas (excluidas de los presupuestos)"
+      stale_pending_count:
+        one: "%{count} transacción"
+        other: "%{count} transacciones"
+      stale_unmatched:
+        one: "%{count} transacción pendiente necesita revisión manual"
+        other: "%{count} transacciones pendientes necesitan revisión manual"
+      stale_unmatched_count:
+        one: "%{count} transacción"
+        other: "%{count} transacciones"
+      title: Salud
+      view_data_quality: Ver detalles de calidad de datos
+      view_duplicate_suggestions: Ver duplicados sugeridos
+      view_error_details: Ver detalles del error
+      view_reconciled: Ver transacciones conciliadas
+      view_stale_pending: Ver cuentas afectadas
+      view_stale_unmatched: Ver transacciones que necesitan revisión
+    holdings:
+      found: 'Encontrado: %{count}'
+      processed: 'Procesado: %{count}'
+      title: Valores en cartera
+    last_sync: 'Última sincronización: hace %{time_ago}'
+    skip_reasons:
+      excluded: excluido
+      import_locked: Importación CSV
+      protected: Protegido
+      user_modified: Usuario modificado
+    title: Resumen de sincronización
+    trades:
+      fetching: Obteniendo actividades de corretaje...
+      imported: 'Importado: %{count}'
+      skipped: 'Omitido: %{count}'
+      title: Vientos alisios
+    transactions:
+      fetching: Obteniendo de corretaje...
+      imported: 'Importado: %{count}'
+      protected:
+        one: "%{count} entrada protegida (no sobrescrita)"
+        other: "%{count} entradas protegidas (no sobrescritas)"
+      seen: 'Visto: %{count}'
+      skipped: 'Omitido: %{count}'
+      title: Actas
+      updated: 'Actualizado: %{count}'
+      view_protected: Ver entradas protegidas

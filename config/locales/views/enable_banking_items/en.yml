@@ -1,6 +1,20 @@
 ---
 en:
   enable_banking_items:
+    enable_banking_item:
+      delete: Delete connection
+      deletion_in_progress: Deletion in progress...
+      no_accounts_description: This connection has no linked accounts yet.
+      no_accounts_title: No accounts
+      provider_name: Enable Banking
+      reconnect: Reconnect needed
+      setup_action: Set up accounts
+      setup_description: "%{count} account(s) need to be set up."
+      setup_needed: Account setup required
+      status: Synced %{timestamp} ago
+      status_never: Never synced
+      syncing: Syncing...
+      update: Update
     authorize:
       authorization_failed: Failed to initiate authorization
       bank_required: Please select a bank.
@@ -34,16 +48,59 @@ en:
         only_manual: Only manual accounts can be linked
         invalid_enable_banking_account: Invalid Enable Banking account selected
     new:
+      add_connection: Add connection
+      configured: Configured
+      connect_bank: Connect bank
+      connected_bank: Connected bank
+      connection: Connection
+      connection_not_configured_description: Before you can link accounts, you need to configure your Enable Banking credentials.
+      connection_not_configured_title: Enable Banking is not configured
+      go_to_provider_settings: Go to Provider Settings
       link_enable_banking_title: Link Enable Banking
+      ready_to_connect_bank: Ready to connect your bank
+      reconnect: Reconnect
+      remove: Remove
+      remove_connection_confirm: Remove this connection?
+      session_expired_reauthorization_required: Session expired. Reauthorization required.
+      session_expires: Session expires on %{date}
+      setup_steps:
+        step1_html: Go to <strong>Settings > Providers</strong>
+        step2_html: Enter your <strong>Enable Banking credentials</strong>
+        step3: Save your settings
+        step4: Return here and connect your bank
+      setup_steps_title: Setup steps
+      sync: Sync
+      unknown: Unknown
     reauthorize:
       invalid_redirect: The authorization URL received is invalid. Please try again.
       reauthorization_failed: Reauthorization failed
+    select_existing_account:
+      all_accounts_already_linked: All Enable Banking accounts are already linked.
+      balance_with_currency: "Balance (%{currency}): %{amount}"
+      cancel: Cancel
+      link_account: Link account
+      title: Link %{account_name} with Enable Banking
+      unlink_to_move: Unlink an existing connection if you want to move it.
+      wait_for_sync: Wait for the next sync to import newly available accounts.
     select_bank:
+      bic: "BIC: %{bic}"
       cancel: Cancel
       check_country: Please check your country code settings.
       credentials_required: Please configure your Enable Banking credentials first.
       description: Select the bank you want to connect to your accounts.
       no_banks: No banks available for this country/region.
       title: Select Your Bank
+    setup_accounts:
+      account_type_label: "Account type:"
+      balance: "Balance: %{value}"
+      cancel: Cancel
+      choose_account_type: Choose the correct account type for each imported account.
+      create_accounts: Create accounts
+      creating_accounts: Creating accounts...
+      historical_data_range: Historical data range
+      subtitle: Choose the correct account types for your imported accounts.
+      sync_start_date_help: Select how far back you want to sync transaction history. Maximum 1 year available.
+      sync_start_date_label: Start syncing transactions from
+      title: Set up your Enable Banking accounts
     update:
       success: Enable Banking configuration updated.

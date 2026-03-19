@@ -3,22 +3,35 @@ es:
   sessions:
     create:
       invalid_credentials: Correo electrónico o contraseña inválidos.
-      local_login_disabled: El inicio de sesión con contraseña local está deshabilitado. Utiliza el inicio de sesión único (SSO).
+      local_login_disabled: El inicio de sesión con contraseña local está deshabilitado.
+        Utiliza el inicio de sesión único (SSO).
     destroy:
       logout_successful: Has cerrado sesión con éxito.
-    openid_connect:
-      failed: No se pudo autenticar a través de OpenID Connect.
     failure:
       failed: No se pudo autenticar.
+      sso_failed: Single sign-on authentication failed. Please try again.
+      sso_invalid_response: Received an invalid response from the SSO provider. Please
+        try again.
+      sso_provider_unavailable: The SSO provider is currently unavailable. Please
+        try again later or contact an administrator.
     new:
+      demo_banner_message: This is a demonstration environment. Login credentials
+        have been pre-filled for your convenience. Please do not enter real or sensitive
+        information.
+      demo_banner_title: Demo Mode Active
       email: Dirección de correo electrónico
       email_placeholder: tu@ejemplo.com
-      forgot_password: ¿Olvidaste tu contraseña?
-      password: Contraseña
-      submit: Iniciar sesión
-      title: Inicia sesión en tu cuenta
-      password_placeholder: Introduce tu contraseña
-      openid_connect: Inicia sesión con OpenID Connect
+      forgot_password: "¿Olvidaste tu contraseña?"
       google_auth_connect: Inicia sesión con Google
       local_login_admin_only: El inicio de sesión local está restringido a administradores.
-      no_auth_methods_enabled: No hay métodos de autenticación habilitados actualmente. Ponte en contacto con un administrador.
+      no_auth_methods_enabled: No hay métodos de autenticación habilitados actualmente.
+        Ponte en contacto con un administrador.
+      openid_connect: Inicia sesión con OpenID Connect
+      password: Contraseña
+      password_placeholder: Introduce tu contraseña
+      submit: Iniciar sesión
+      title: Inicia sesión en tu cuenta
+    openid_connect:
+      failed: No se pudo autenticar a través de OpenID Connect.
+    post_logout:
+      logout_successful: You have signed out successfully.

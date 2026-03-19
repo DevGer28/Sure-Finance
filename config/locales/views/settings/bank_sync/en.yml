@@ -1,0 +1,9 @@
+---
+en:
+  settings:
+    bank_sync:
+      show:
+        no_providers_description: Configure providers to link your bank accounts.
+        no_providers_title: No providers configured
+        providers: Providers
+        title: Bank Sync

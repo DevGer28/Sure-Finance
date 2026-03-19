@@ -14,13 +14,19 @@ es:
       invalid_invite_code: Código de invitación inválido, por favor inténtalo de nuevo.
       success: Te has registrado con éxito.
     new:
+      email_placeholder: tu@ejemplo.com
       invitation_message: "%{inviter} te ha invitado a unirte como %{role}"
       join_family_title: Únete a %{family}
+      password_placeholder: Introduce tu contraseña
+      password_requirements:
+        case: Letras mayúsculas y minúsculas
+        length: Mínimo 8 caracteres
+        number: Un número (0-9)
+        special: Un carácter especial (!, @, #, $, %, etc)
       role_admin: administrador
       role_member: miembro
       submit: Crear cuenta
       title: Crea tu cuenta
-      welcome_body: Para comenzar, debes registrarte para obtener una nueva cuenta. Luego podrás
-        configurar ajustes adicionales dentro de la aplicación.
-      welcome_title: ¡Bienvenido a Self Hosted %{product_name}!
-      password_placeholder: Introduce tu contraseña
+      welcome_body: Para comenzar, debes registrarte para obtener una nueva cuenta.
+        Luego podrás configurar ajustes adicionales dentro de la aplicación.
+      welcome_title: "¡Bienvenido a Self Hosted %{product_name}!"

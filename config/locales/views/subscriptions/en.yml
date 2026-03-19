@@ -2,6 +2,7 @@ en:
   subscriptions:
     self_hosted_alert: "%{product_name} is not available in self-hosted mode."
     upgrade:
+      account_settings: "Account Settings"
       contribute_and_support_sure: "Contribute and support Sure"
       cta: "Continue supporting the development of this codebase!"
       header:
@@ -9,5 +10,7 @@ en:
         sure: "Sure"
         today: "today"
       redirect_to_stripe: "In the next step, you'll be redirected to Stripe which handles credit cards for us."
+      sign_out: "Sign out"
+      title: "Upgrade"
       trialing: "Your data will be deleted in %{days} days"
       trial_over: "Your trial is over"

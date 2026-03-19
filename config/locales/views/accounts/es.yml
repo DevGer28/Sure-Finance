@@ -1,23 +1,52 @@
 ---
 es:
+  account:
+    entries:
+      destroy:
+        success: Success
   accounts:
     account:
+      complete_setup: Completar configuración
       link_lunchflow: Vincular con Lunch Flow
+      link_provider: Enlace con proveedor
       troubleshoot: Solucionar problemas
+      unlink_provider: Desvincular del proveedor
     chart:
       data_not_available: Datos no disponibles para el período seleccionado
+    confirm_unlink:
+      confirm_button: Confirmar y desvincular
+      description_html: Estás a punto de desvincular <strong>%{account_name}</strong>
+        de <strong>%{provider_name}</strong>. Esto la convertirá en una cuenta manual.
+      title: "¿Desvincular cuenta del proveedor?"
+      warning_can_delete: Después de desvincularse, podrá eliminar la cuenta si es
+        necesario
+      warning_manual_updates: Deberá agregar transacciones y actualizar saldos manualmente
+      warning_no_sync: La cuenta ya no se sincronizará automáticamente con su proveedor
+      warning_title: "¿Qué significa esto?"
+      warning_transactions_kept: Se conservarán todas las transacciones y saldos existentes.
     create:
-      success: "Cuenta %{type} creada"
+      success: Cuenta %{type} creada
     destroy:
-      success: "Cuenta %{type} programada para eliminación"
+      cannot_delete_linked: No se puede eliminar una cuenta vinculada. Por favor,
+        desvincúlalo primero.
+      success: Cuenta %{type} programada para eliminación
     empty:
-      empty_message: Añade una cuenta mediante conexión, importación o introducción manual.
+      empty_message: Añade una cuenta mediante conexión, importación o introducción
+        manual.
       new_account: Nueva cuenta
       no_accounts: Aún no hay cuentas
     form:
+      additional_details: Detalles adicionales
       balance: Saldo actual
+      institution_domain_label: Dominio de la institución
+      institution_domain_placeholder: por ejemplo, Chase.com
+      institution_name_label: Nombre de la institución
+      institution_name_placeholder: por ejemplo, Chase Bank
       name_label: Nombre de la cuenta
       name_placeholder: Ejemplo de nombre de cuenta
+      notes_label: Notas
+      notes_placeholder: Almacene información adicional como números de cuenta, códigos
+        de clasificación, IBAN, números de ruta, etc.
     index:
       accounts: Cuentas
       manual_accounts:
@@ -25,65 +54,117 @@ es:
       new_account: Nueva cuenta
       sync: Sincronizar todo
     new:
+      container:
+        close: Cerrar
+        navigate: Navegar
+        next: Siguiente
+        previous: Anterior
+        select: Seleccionar
       import_accounts: Importar cuentas
       method_selector:
         connected_entry: Vincular cuenta
         connected_entry_eu: Vincular cuenta de la UE
-        link_with_provider: "Vincular con %{provider}"
+        link_with_provider: Vincular con %{provider}
         lunchflow_entry: Vincular cuenta de Lunch Flow
         manual_entry: Introducir saldo de la cuenta
-        title: ¿Cómo te gustaría añadirla?
-      title: ¿Qué te gustaría añadir?
+        title: "¿Cómo te gustaría añadirla?"
+      title: "¿Qué te gustaría añadir?"
+    select_provider:
+      already_linked: La cuenta ya está vinculada a un proveedor
+      description: Elija qué proveedor desea utilizar para vincular %{account_name}
+      no_providers: Actualmente no hay proveedores configurados
+      title: Seleccione un proveedor para vincular
     show:
       activity:
         amount: Cantidad
         balance: Saldo
+        confirmed: Confirmado
         date: Fecha
         entries: entradas
         entry: entrada
+        filter: Filtrar
         new: Nuevo
+        new_activity: Nueva actividad
         new_balance: Nuevo saldo
+        new_trade: Nuevo comercio
         new_transaction: Nueva transacción
+        new_transfer: Nueva transferencia
         no_entries: No se encontraron entradas
+        pending: Pendiente
         search:
           placeholder: Buscar entradas por nombre
+        status: Estado
         title: Actividad
       chart:
         balance: Saldo
         owed: Cantidad adeudada
       menu:
+        account_resource: cuenta
         confirm_accept: Eliminar "%{name}"
-        confirm_body_html: "<p>Al eliminar esta cuenta, borrarás su historial de valores, afectando varios aspectos de tu cuenta general. Esta acción tendrá un impacto directo en los cálculos de tu patrimonio neto y en los gráficos de la cuenta.</p><br /> <p>Después de la eliminación, no podrás restaurar la información de la cuenta, ya que tendrás que añadirla como una nueva cuenta.</p>"
-        confirm_title: ¿Eliminar cuenta?
+        confirm_body_html: "<p>Al eliminar esta cuenta, borrarás su historial de valores,
+          afectando varios aspectos de tu cuenta general. Esta acción tendrá un impacto
+          directo en los cálculos de tu patrimonio neto y en los gráficos de la cuenta.</p><br
+          /> <p>Después de la eliminación, no podrás restaurar la información de la
+          cuenta, ya que tendrás que añadirla como una nueva cuenta.</p>"
+        confirm_title: "¿Eliminar cuenta?"
+        delete_account: Eliminar cuenta
         edit: Editar
         import: Importar transacciones
+        import_trades: Comercios de importación
+        import_transactions: Transacciones de importación
         manage: Gestionar cuentas
-    update:
-      success: "Cuenta %{type} actualizada"
     sidebar:
-      missing_data: Faltan datos históricos
-      missing_data_description: "%{product} utiliza proveedores externos para obtener tipos de cambio históricos, precios de valores y más. Estos datos son necesarios para calcular saldos históricos precisos de las cuentas."
       configure_providers: Configura tus proveedores aquí.
+      missing_data: Faltan datos históricos
+      missing_data_description: "%{product} utiliza proveedores externos para obtener
+        tipos de cambio históricos, precios de valores y más. Estos datos son necesarios
+        para calcular saldos históricos precisos de las cuentas."
+      new_account: Nueva cuenta
+      new_account_group: Nuevo %{account_group}
+      new_asset: Nuevo activo
+      new_debt: Nueva deuda
       tabs:
         all: Todo
         assets: Activos
         debts: Deudas
-      new_asset: Nuevo activo
-      new_debt: Nueva deuda
-      new_account: Nueva cuenta
-      new_account_group: "Nuevo %{account_group}"
+    subtype_regions:
+      au: Australia
+      ca: Canadá
+      eu: Europa
+      generic: General
+      uk: Reino Unido
+      us: Estados Unidos
+    sync_all:
+      syncing: Sincronizando cuentas...
+    tax_treatment_descriptions:
+      tax_advantaged: Beneficios fiscales especiales con condiciones
+      tax_deferred: Contribuciones deducibles, gravadas al retirarlas
+      tax_exempt: Contribuciones después de impuestos, ganancias no gravadas
+      taxable: Ganancias gravadas cuando se realizan
+    tax_treatments:
+      tax_advantaged: Con ventajas fiscales
+      tax_deferred: Impuestos diferidos
+      tax_exempt: Exento de impuestos
+      taxable: Imponible
     types:
+      credit_card: Tarjeta de crédito
+      crypto: Cripto
       depository: Efectivo
       investment: Inversión
-      crypto: Cripto
+      loan: Préstamo
+      other_asset: Otro activo
+      other_liability: Otra deuda
       property: Propiedad
       vehicle: Vehículo
-      other_asset: Otro activo
-      credit_card: Tarjeta de crédito
-      loan: Préstamo
-      other_liability: Otra deuda
-
+    unlink:
+      error: 'No se pudo desvincular la cuenta: %{error}'
+      generic_error: Se produjo un error inesperado. Por favor inténtalo de nuevo.
+      not_linked: La cuenta no está vinculada a un proveedor
+      success: Cuenta desvinculada exitosamente. Ahora es una cuenta manual.
+    update:
+      success: Cuenta %{type} actualizada
   email_confirmations:
     new:
       invalid_token: Enlace de confirmación inválido o caducado.
-      success_login: Tu correo electrónico ha sido confirmado. Por favor, inicia sesión con tu nueva dirección de correo electrónico.
+      success_login: Tu correo electrónico ha sido confirmado. Por favor, inicia sesión
+        con tu nueva dirección de correo electrónico.

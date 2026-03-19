@@ -1,0 +1,20 @@
+---
+es:
+  transfer_matches:
+    matching_fields:
+      matching_method: Método de coincidencia
+      matching_transaction: Transacción coincidente
+      method_existing: Coincidir con una transacción existente (recomendado)
+      method_new: Crear nueva transacción
+      no_candidates_message: No pudimos encontrar transacciones para hacer coincidir desde tus otras cuentas. Selecciona una cuenta y crearemos una nueva transacción de entrada.
+      select_method: Selecciona un método para hacer coincidir tus transacciones.
+      target_account: Cuenta de destino
+    new:
+      from_account: Desde la cuenta
+      from_account_with_name: "Desde la cuenta: %{account}"
+      inflow_transaction: Transacción de entrada
+      outflow_transaction: Transacción de salida
+      submit: Crear coincidencia de transferencia
+      title: Coincidir transferencia o pago
+      to_account: Hacia la cuenta
+      to_account_with_name: "Hacia la cuenta: %{account}"

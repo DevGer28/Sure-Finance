@@ -26,11 +26,33 @@ en:
         update_failed: "Failed to update connection: %{message}"
         unexpected: An unexpected error occurred. Please try again.
     edit:
+      cancel: Cancel
+      instructions:
+        bridge_link: SimpleFIN Bridge
+        step1_html: Visit %{link} to create a new setup token
+        step2: Copy the token and paste it below
+        step3: Click "Update" to restore access
+        title: "Your SimpleFIN connection needs to be updated:"
       setup_token:
         label: "SimpleFIN Setup Token:"
         placeholder: "Paste your SimpleFIN setup token here..."
         help_text: "The token should be a long string starting with letters and numbers"
+      subtitle: Get a new setup token to reconnect your SimpleFin account
+      title: Update SimpleFin Connection
+      update: Update
     setup_accounts:
+      account_type_guidance:
+        checking_or_savings: Checking or Savings - Regular bank accounts
+        credit_card: Credit Card - Credit card accounts
+        investment: Investment - Brokerage, 401(k), IRA accounts
+        loan_or_mortgage: Loan or Mortgage - Debt accounts
+        other_asset: Other Asset - Everything else
+      account_type_guidance_title: "Choose the correct account type for each SimpleFin account:"
+      account_type_label: "Account Type:"
+      balance_label: "Balance: %{amount}"
+      cancel: Cancel
+      create_accounts: Create Accounts
+      creating_accounts: Creating Accounts...
       stale_accounts:
         title: "Accounts No Longer in SimpleFIN"
         description: "These accounts exist in your database but are no longer provided by SimpleFIN. This can happen when account configurations change upstream."
@@ -41,6 +63,10 @@ en:
         transaction_count:
           one: "%{count} transaction"
           other: "%{count} transactions"
+      subtitle: Choose the correct account types for your imported accounts
+      title: Set Up Your SimpleFin Accounts
+      transaction_history_description: SimpleFin typically provides 60-90 days of transaction history, depending on your bank. After initial setup, new transactions will sync automatically going forward. Historical data availability varies by institution and account type.
+      transaction_history_title: "Transaction History:"
     complete_account_setup:
       all_skipped: "All accounts were skipped. No accounts were created."
       no_accounts: "No accounts to set up."
@@ -85,6 +111,7 @@ en:
     select_existing_account:
       title: "Link %{account_name} to SimpleFIN"
       description: Select a SimpleFIN account to link to your existing account
+      balance_with_currency: "%{currency} • Balance: %{amount}"
       cancel: Cancel
       link_account: Link account
       no_accounts_found: No SimpleFIN accounts found for this family.
@@ -106,3 +133,8 @@ en:
       message:
         one: "%{count} pending transaction older than %{days} days"
         other: "%{count} pending transactions older than %{days} days"
+    subtype_select:
+      please_select: Please select a %{label}
+      select_label: Select %{label}
+      subtype: subtype
+      type: type

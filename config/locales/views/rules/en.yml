@@ -1,9 +1,85 @@
 ---
 en:
   rules:
+    confirm:
+      confirm_button: Confirm changes
+      description_html: You are about to apply this rule to <span class="text-primary font-medium">%{count} %{resource_type}</span> that meet the specified rule criteria. Please confirm if you wish to proceed with this change.
+      title: Confirm changes
+      title_with_name: Confirm changes to "%{name}"
+    form:
+      add_action: Add action
+      add_condition: Add condition
+      add_condition_group: Add condition group
+      all_past_and_future: All past and future %{resource_type}
+      for_label: FOR
+      if_label: IF
+      rule_name_optional: Rule name (optional)
+      rule_name_placeholder: Enter a name for this rule
+      starting_from: Starting from
+      then_label: THEN
+    rule:
+      all_past_and_future: All past and future %{resource_type}
+      delete: Delete
+      edit: Edit
+      for_label: FOR
+      if_label: IF
+      more_actions:
+        one: and %{count} more action
+        other: and %{count} more actions
+      more_conditions:
+        one: and %{count} more condition
+        other: and %{count} more conditions
+      on_or_after: "%{resource_type} on or after %{date}"
+      reapply_rule: Re-apply rule
+      rule_resource: rule
+      then_label: THEN
+      to: to
+    index:
+      all_rules: all rules
+      delete_all: Delete all rules
+      empty_description: Set up rules to perform actions to your transactions and other data on every account sync.
+      empty_title: No rules yet
+      new_rule: New rule
+      self_hosted_ai_warning: AI-enabled rule actions will cost money. Be sure to filter as narrowly as possible to avoid unnecessary costs.
+      sort_by: "Sort by:"
+      sort_options:
+        name: Name
+        updated_at: Updated At
+      title: Rules
+      toggle_sort_direction: Toggle sort direction
+    new:
+      back_to_rules: Back to rules
+      title_with_resource: New %{resource_type} rule
     no_action: No Action
+    action_executors:
+      labels:
+        auto_categorize: Auto-categorize transactions with AI
+        auto_detect_merchants: Auto-detect merchants
+        auto_detect_merchants_with_ai: Auto-detect merchants with AI ($$)
+        exclude_transaction: Exclude from budgeting and reports
+        set_investment_activity_label: Set investment activity label
+        set_transaction_category: Set transaction category
+        set_transaction_merchant: Set transaction merchant
+        set_transaction_name: Set transaction name
+        set_transaction_tags: Set transaction tags
+      auto_categorize:
+        cost_estimate_suffix: " (~$%{amount} per 20 transactions)"
+        cost_na_suffix: " (cost: N/A)"
+        no_provider_suffix: " (no LLM provider configured)"
     actions:
+      to: to
       value_placeholder: Enter a value
+    category_rule_cta:
+      create_rule: Create rule
+      description: You can create a rule to automatically categorize transactions like this one
+      dismiss: Dismiss
+      dont_show_again: Don't show this again
+      message: Updated to %{category_name}
+    conditions:
+      group:
+        and: and
+        match: match
+        of_the_following_conditions: of the following conditions
     apply_all:
       button: Apply All
       confirm_title: Apply All Rules
@@ -38,6 +114,23 @@ en:
         success: Success
         failed: Failed
     condition_filters:
+      labels:
+        transaction_amount: Transaction amount
+        transaction_category: Transaction category
+        transaction_details: Transaction details
+        transaction_merchant: Transaction merchant
+        transaction_name: Transaction name
+        transaction_notes: Transaction notes
+        transaction_type: Transaction type
+      operators:
+        contains: Contains
+        equal_to: Equal to
+        greater_or_equal_to: Greater or equal to
+        greater_than: Greater than
+        is_empty: Is empty
+        is_equal_to: Is equal to
+        less_than: Less than
+        less_than_or_equal_to: Less than or equal to
       transaction_type:
         income: Income
         expense: Expense

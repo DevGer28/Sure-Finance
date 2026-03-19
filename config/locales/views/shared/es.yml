@@ -5,10 +5,14 @@ es:
       accept: Confirmar
       body_html: "<p>No podrás deshacer esta decisión</p>"
       cancel: Cancelar
-      title: ¿Estás seguro?
+      title: "¿Estás seguro?"
     money_field:
       label: Importe
     syncing_notice:
       syncing: Sincronizando datos de cuentas...
+    transaction_tabs:
+      expense: Expense
+      income: Income
+      transfer: Transfer
     trend_change:
-      no_change: "sin cambios"
+      no_change: sin cambios

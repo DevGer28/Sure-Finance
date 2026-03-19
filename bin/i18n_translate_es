@@ -1,0 +1,164 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "json"
+require "net/http"
+require "uri"
+require "find"
+require "yaml"
+
+class GoogleTranslator
+  TRANSLATE_URL = "http://translate.googleapis.com/translate_a/single".freeze
+
+  def initialize
+    @cache = {}
+    @failures = 0
+  end
+
+  attr_reader :failures
+
+  def translate(text)
+    return text if text.nil? || text.strip.empty?
+    return @cache[text] if @cache.key?(text)
+
+    protected_text, replacements = protect_tokens(text)
+    translated = request_translation(protected_text)
+    translated = restore_tokens(translated, replacements)
+    @cache[text] = translated
+  end
+
+  private
+    def protect_tokens(text)
+      replacements = {}
+      index = 0
+
+      patterns = [
+        /%\{[^}]+\}/,   # interpolation placeholders
+        /<[^>]+>/,      # html tags
+        /`[^`]+`/,      # inline code
+        %r{https?://\S+} # urls
+      ]
+
+      protected_text = text.dup
+      patterns.each do |pattern|
+        protected_text = protected_text.gsub(pattern) do |match|
+          token = "__PROTECTED_#{index}__"
+          replacements[token] = match
+          index += 1
+          token
+        end
+      end
+
+      [ protected_text, replacements ]
+    end
+
+    def restore_tokens(text, replacements)
+      restored = text.dup
+      replacements.each { |token, original| restored = restored.gsub(token, original) }
+      restored
+    end
+
+    def request_translation(text)
+      uri = URI(TRANSLATE_URL)
+      uri.query = URI.encode_www_form(
+        client: "gtx",
+        sl: "en",
+        tl: "es",
+        dt: "t",
+        q: text
+      )
+
+      attempts = 0
+      begin
+        attempts += 1
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.open_timeout = 8
+        http.read_timeout = 8
+
+        response = http.request(Net::HTTP::Get.new(uri))
+        raise "Translation request failed: #{response.code}" unless response.is_a?(Net::HTTPSuccess)
+
+        payload = JSON.parse(response.body)
+        translated_parts = payload.fetch(0, []).map { |part| part[0] }
+        translated_parts.join
+      rescue StandardError
+        retry if attempts < 3
+        @failures += 1
+        text
+      end
+    end
+end
+
+def normalize(value)
+  value.to_s.strip
+end
+
+def likely_user_text?(value)
+  value.is_a?(String) && value.match?(/[A-Za-z]/)
+end
+
+def locale_pairs
+  pairs = []
+  Find.find("config/locales") do |path|
+    next unless path.end_with?("/en.yml")
+
+    es_path = path.sub(%r{/en\.yml$}, "/es.yml")
+    next unless File.exist?(es_path)
+
+    pairs << [ path, es_path ]
+  end
+  pairs
+end
+
+def skip_translation_path?(path)
+  path == "number.format.round_mode"
+end
+
+def translate_tree!(en_tree, es_tree, translator, stats, path = [])
+  en_tree.each do |key, en_value|
+    es_value = es_tree[key]
+    current_path = path + [ key.to_s ]
+
+    if en_value.is_a?(Hash)
+      es_tree[key] = {} unless es_value.is_a?(Hash)
+      translate_tree!(en_value, es_tree[key], translator, stats, current_path)
+      next
+    end
+
+    next unless en_value.is_a?(String)
+    next unless es_value.is_a?(String)
+    next unless likely_user_text?(en_value)
+    next unless normalize(en_value) == normalize(es_value)
+    next if skip_translation_path?(current_path.join("."))
+
+    translated = translator.translate(en_value)
+    next if normalize(translated) == normalize(es_value)
+
+    es_tree[key] = translated
+    stats[:translated] += 1
+    puts "Translated #{stats[:translated]}..." if (stats[:translated] % 100).zero?
+  end
+end
+
+translator = GoogleTranslator.new
+stats = { files_updated: 0, translated: 0 }
+
+locale_pairs.each do |en_path, es_path|
+  en_doc = YAML.load_file(en_path)
+  es_doc = YAML.load_file(es_path)
+
+  en_root = en_doc["en"]
+  es_root = es_doc["es"]
+  next unless en_root.is_a?(Hash) && es_root.is_a?(Hash)
+
+  before = Marshal.load(Marshal.dump(es_root))
+  translate_tree!(en_root, es_root, translator, stats)
+
+  next if es_root == before
+
+  File.write(es_path, YAML.dump(es_doc).sub(/\A---\n/, "---\n"))
+  stats[:files_updated] += 1
+  puts "Updated #{es_path}"
+end
+
+puts "\nDone. Files updated: #{stats[:files_updated]}, strings translated: #{stats[:translated]}, failed requests: #{translator.failures}"

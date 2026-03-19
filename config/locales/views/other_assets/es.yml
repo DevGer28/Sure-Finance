@@ -2,6 +2,10 @@
 es:
   other_assets:
     edit:
+      balance_tracking_info: Other Assets are tracked via manual valuations using
+        'New Balance', not transactions. Cashflow will not affect the account balance.
       edit: Editar %{account}
     new:
+      balance_tracking_info: Other Assets are tracked via manual valuations using
+        'New Balance', not transactions. Cashflow will not affect the account balance.
       title: Introduce los detalles del activo

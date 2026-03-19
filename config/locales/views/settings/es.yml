@@ -1,39 +1,75 @@
 ---
 es:
-  views:
-    settings:
-      payments:
-        renewal: "Tu contribución continúa el %{date}."
   settings:
     ai_prompts:
       show:
-        page_title: Indicaciones de IA
-        openai_label: OpenAI
         disable_ai: Desactivar Asistente de IA
-        prompt_instructions: Instrucciones de Indicaciones
         main_system_prompt:
+          subtitle: Instrucciones principales que definen cómo se comporta el asistente
+            de IA en todas las conversaciones de chat
           title: Indicaciones del Sistema Principal
-          subtitle: Instrucciones principales que definen cómo se comporta el asistente de IA en todas las conversaciones de chat
-        transaction_categorizer:
-          title: Categorizador de Transacciones
-          subtitle: La IA categoriza automáticamente tus transacciones según tus categorías definidas
         merchant_detector:
+          subtitle: La IA identifica y enriquece los datos de transacciones con información
+            de comerciantes
           title: Detector de Comerciantes
-          subtitle: La IA identifica y enriquece los datos de transacciones con información de comerciantes
+        openai_label: OpenAI
+        page_title: Indicaciones de IA
+        prompt_instructions: Instrucciones de Indicaciones
+        transaction_categorizer:
+          subtitle: La IA categoriza automáticamente tus transacciones según tus categorías
+            definidas
+          title: Categorizador de Transacciones
+    llm_usages:
+      show:
+        title: Uso y costos de LLM
+        subtitle: Realiza seguimiento de tu uso de IA y costos estimados
+        start_date: Fecha de inicio
+        end_date: Fecha de fin
+        filter: Filtrar
+        total_requests: Solicitudes totales
+        total_tokens: Tokens totales
+        prompt_completion: "%{prompt} prompt / %{completion} completion"
+        total_cost: Costo total
+        avg_cost_per_request: Costo promedio/solicitud
+        based_on_requests_with_cost: Basado en %{with_cost} de %{total} solicitudes con datos de costo
+        cost_by_operation: Costo por operación
+        cost_by_model: Costo por modelo
+        recent_usage: Uso reciente
+        date: Fecha
+        operation: Operación
+        model: Modelo
+        tokens: Tokens
+        cost: Costo
+        failed: Falló
+        http_status: "Estado HTTP: %{status}"
+        no_usage_data: No se encontraron datos de uso para el período seleccionado
+        about_cost_estimates: Acerca de los costos estimados
+        cost_estimate_note: Los costos se estiman según los precios de OpenAI de 2025. Los costos reales pueden variar. El precio es por 1 millón de tokens y varía por modelo. Los modelos personalizados o autoalojados mostrarán "N/A" y no se incluyen en los costos totales.
+    hostings:
+      ensure_admin:
+        not_authorized: Not authorized
     payments:
       show:
         page_title: Pago
         subscription_subtitle: Actualiza tu suscripción y detalles de pago
         subscription_title: Gestionar suscripción
+        currently_on_plan_html: 'Actualmente estás en el plan <span class="font-medium">%{plan}</span>.'
+        trialing_message: Actualmente estás usando la demo abierta de %{product_name}
+        trialing_countdown: (Los datos se eliminarán en %{days} días)
+        not_contributing_html: Actualmente <span class="font-medium">no estás contribuyendo</span>
+        contributions_will_show: Las contribuciones a %{product_name} aparecerán aquí.
+        manage: Gestionar
+        choose_level: Elegir nivel
+        payment_via_stripe: Pago vía Stripe
     preferences:
       show:
         country: País
         currency: Moneda
         date_format: Formato de fecha
+        default_account_order: Orden Predeterminado de Cuentas
+        default_period: Periodo Predeterminado
         general_subtitle: Configura tus preferencias
         general_title: General
-        default_period: Periodo Predeterminado
-        default_account_order: Orden Predeterminado de Cuentas
         language: Idioma
         language_auto: Idioma del navegador
         page_title: Preferencias
@@ -43,6 +79,8 @@ es:
         theme_system: Sistema
         theme_title: Tema
         timezone: Zona horaria
+        translations_notice: Nota, seguimos trabajando en traducciones para varios
+          idiomas.
     profiles:
       destroy:
         cannot_remove_self: No puedes eliminarte a ti mismo de la cuenta.
@@ -51,32 +89,35 @@ es:
         not_authorized: No estás autorizado para eliminar miembros.
       show:
         confirm_delete:
-          body: ¿Estás seguro de que deseas eliminar permanentemente tu cuenta? Esta acción es irreversible.
-          title: ¿Eliminar cuenta?
-        confirm_reset:
-          body: ¿Estás seguro de que deseas restablecer tu cuenta? Esto eliminará todas tus cuentas, categorías, comerciantes, etiquetas y otros datos. Esta acción no se puede deshacer.
-          title: ¿Restablecer cuenta?
-        confirm_reset_with_sample_data:
-          body: ¿Estás seguro de que deseas restablecer tu cuenta y cargar datos de ejemplo? Esto eliminará tus datos existentes y los reemplazará con datos de demostración para que puedas explorar Sure de forma segura.
-          title: ¿Restablecer cuenta y cargar datos de ejemplo?
+          body: "¿Estás seguro de que deseas eliminar permanentemente tu cuenta? Esta
+            acción es irreversible."
+          title: "¿Eliminar cuenta?"
         confirm_remove_invitation:
-          body: ¿Estás seguro de que deseas eliminar la invitación para %{email}?
+          body: "¿Estás seguro de que deseas eliminar la invitación para %{email}?"
           title: Eliminar Invitación
         confirm_remove_member:
-          body: ¿Estás seguro de que deseas eliminar a %{name} de tu cuenta?
+          body: "¿Estás seguro de que deseas eliminar a %{name} de tu cuenta?"
           title: Eliminar Miembro
+        confirm_reset:
+          body: "¿Estás seguro de que deseas restablecer tu cuenta? Esto eliminará
+            todas tus cuentas, categorías, comerciantes, etiquetas y otros datos.
+            Esta acción no se puede deshacer."
+          title: "¿Restablecer cuenta?"
+        confirm_reset_with_sample_data:
+          body: "¿Estás seguro de que deseas restablecer tu cuenta y cargar datos
+            de ejemplo? Esto eliminará tus datos existentes y los reemplazará con
+            datos de demostración para que puedas explorar Sure de forma segura."
+          title: "¿Restablecer cuenta y cargar datos de ejemplo?"
         danger_zone_title: Zona de Peligro
         delete_account: Eliminar cuenta
-        delete_account_warning: Eliminar tu cuenta eliminará permanentemente todos tus datos y no se puede deshacer.
-        reset_account: Restablecer cuenta
-        reset_account_warning: Restablecer tu cuenta eliminará todas tus cuentas, categorías, comerciantes, etiquetas y otros datos, pero mantendrá tu cuenta de usuario intacta.
-        reset_account_with_sample_data: Restablecer y precargar
-        reset_account_with_sample_data_warning: Elimina todos tus datos existentes y luego carga nuevos datos de ejemplo para que puedas explorar con un entorno prellenado.
+        delete_account_warning: Eliminar tu cuenta eliminará permanentemente todos
+          tus datos y no se puede deshacer.
         email: Correo electrónico
         first_name: Nombre
         household_form_input_placeholder: Introduce el nombre del grupo familiar
         household_form_label: Nombre del grupo familiar
-        household_subtitle: Invita a miembros de la familia, socios y otras personas. Los invitados pueden entrar en la cuenta y acceder a las cuentas compartidas.
+        household_subtitle: Invita a miembros de la familia, socios y otras personas.
+          Los invitados pueden entrar en la cuenta y acceder a las cuentas compartidas.
         household_title: Grupo Familiar
         invitation_link: Enlace de invitación
         invite_member: Añadir miembro
@@ -85,43 +126,224 @@ es:
         pending: Pendiente
         profile_subtitle: Personaliza cómo apareces en %{product_name}
         profile_title: Personal
+        request_new_confirmation_email: solicitar un nuevo correo de confirmación
+        unconfirmed_email_notice_html: Has solicitado cambiar tu correo a %{email}. Ve a tu correo y confirma para que el cambio surta efecto. Si no has recibido el correo, revisa tu carpeta de spam, o %{link}.
         remove_invitation: Eliminar Invitación
         remove_member: Eliminar Miembro
+        reset_account: Restablecer cuenta
+        reset_account_warning: Restablecer tu cuenta eliminará todas tus cuentas,
+          categorías, comerciantes, etiquetas y otros datos, pero mantendrá tu cuenta
+          de usuario intacta.
+        reset_account_with_sample_data: Restablecer y precargar
+        reset_account_with_sample_data_warning: Elimina todos tus datos existentes
+          y luego carga nuevos datos de ejemplo para que puedas explorar con un entorno
+          prellenado.
         save: Guardar
+    providers:
+      provider_form:
+        env_configured_message: La configuración puede establecerse con variables
+          de entorno o sobrescribirse abajo.
+        field_descriptions: "Descripción de campos:"
+        optional: Opcional
+        save_configuration: Guardar configuración
+        status_configured: Configurado y listo para usar
+        status_not_configured: No configurado
+      show:
+        page_title: Proveedores de sincronización
+        description: Configura credenciales para proveedores de sincronización de terceros. La configuración aquí reemplaza variables de entorno.
+        lunchflow_title: Lunch Flow
+        simplefin_title: SimpleFIN
+        enable_banking_title: Enable Banking (beta)
+        coinstats_title: CoinStats (beta)
+        mercury_title: Mercury (beta)
+        coinbase_title: Coinbase (beta)
+        snaptrade_title: SnapTrade (beta)
+      enable_banking_panel:
+        setup_instructions: "Instrucciones de configuración:"
+        enable_banking_link: Enable Banking
+        step1_html: Visita tu cuenta de desarrollador de %{link} para obtener tus credenciales
+        step2: Selecciona tu código de país en el desplegable de abajo
+        step3: Ingresa tu ID de aplicación y pega tu certificado de cliente (incluyendo la clave privada)
+        step4: Haz clic en Guardar configuración y luego usa "Agregar conexión" para vincular tu banco
+        field_descriptions: "Descripción de campos:"
+        country_code_label: Código de país
+        country_code_description: Código de país ISO 3166-1 alpha-2 (por ejemplo, GB, DE, FR) - determina los bancos disponibles
+        application_id_label: ID de aplicación
+        application_id_description: El ID generado en tu cuenta de desarrollador de Enable Banking
+        client_certificate_label: Certificado de cliente
+        client_certificate_description: El certificado generado al crear tu aplicación (debe incluir la clave privada)
+        select_country: Selecciona un país...
+        country_label: País
+        configuration_locked_title: Configuración bloqueada
+        configuration_locked_message: No puedes cambiar credenciales mientras tengas conexiones bancarias activas. Elimina primero todas las conexiones para actualizar credenciales.
+        application_id_placeholder_new: Ingresa el ID de aplicación
+        application_id_placeholder_update: Ingresa un nuevo ID para actualizar
+        client_certificate_with_key_label: Certificado de cliente (con clave privada)
+        client_certificate_placeholder: |-
+          -----BEGIN PRIVATE KEY-----
+          ...
+          -----END PRIVATE KEY-----
+          -----BEGIN CERTIFICATE-----
+          ...
+          -----END CERTIFICATE-----
+        save_configuration: Guardar configuración
+        update_configuration: Actualizar configuración
+        connected_bank: Banco conectado
+        session_expires: "La sesión vence: %{date}"
+        unknown: Desconocido
+        connection: Conexión
+        session_expired_reconnect: Sesión vencida - reconectar
+        configured: Configurado
+        ready_to_link_accounts: Listo para vincular cuentas
+        sync: Sincronizar
+        reconnect: Reconectar
+        connect_bank: Conectar banco
+        remove_connection_confirm: "¿Seguro que deseas eliminar esta conexión?"
+        remove: Eliminar
+        add_connection: Agregar conexión
+      lunchflow_panel:
+        setup_instructions: "Instrucciones de configuración:"
+        lunchflow_link: Lunch Flow
+        step1_html: Visita %{link} para obtener tu clave API
+        step2: Pega tu clave API abajo y haz clic en Guardar
+        step3_html: Después de una conexión exitosa, ve a la pestaña %{accounts_link} para configurar nuevas cuentas y vincularlas a las existentes
+        field_descriptions: "Descripción de campos:"
+        api_key_label: Clave API
+        api_key_description: Tu clave API de Lunch Flow para autenticación (requerida)
+        base_url_label: URL base
+        base_url_description: URL base de la API de Lunch Flow (opcional, por defecto https://lunchflow.app/api/v1)
+        api_key_placeholder_new: Pega la clave API aquí
+        api_key_placeholder_update: Ingresa una nueva clave API para actualizar
+        base_url_optional_label: URL base (opcional)
+        base_url_placeholder: https://lunchflow.app/api/v1 (por defecto)
+        save_configuration: Guardar configuración
+        update_configuration: Actualizar configuración
+        status_configured_html: Configurado y listo para usar. Visita la pestaña %{accounts_link} para gestionar y configurar cuentas.
+        status_not_configured: No configurado
+        accounts_tab: Cuentas
+      mercury_panel:
+        setup_instructions: "Instrucciones de configuración:"
+        mercury_link: Mercury
+        step1_html: Visita %{link} e inicia sesión en tu cuenta
+        step2: Ve a Configuración > Desarrollador > Tokens API
+        step3: Crea un nuevo token API con acceso "Solo lectura"
+        step4_prefix: "Importante:"
+        step4_suffix: Agrega la IP de tu servidor a la lista blanca del token
+        step5_html: Copia el <strong>token completo</strong> (incluyendo el prefijo <code>secret-token:</code>) y pégalo abajo
+        step6_html: Después de una conexión exitosa, ve a la pestaña %{accounts_link} para configurar nuevas cuentas
+        field_descriptions: "Descripción de campos:"
+        token_label: Token API
+        token_description_html: Tu token API completo de Mercury incluyendo el prefijo <code>secret-token:</code> (requerido)
+        base_url_label: URL base
+        base_url_description: URL de la API de Mercury (opcional, por defecto https://api.mercury.com/api/v1)
+        note_label: "Nota:"
+        note_text_html: Para pruebas en sandbox, usa <code>https://api-sandbox.mercury.com/api/v1</code> como URL base. Mercury requiere lista blanca de IP; asegúrate de agregar tu IP en el panel de Mercury.
+        token_placeholder_new: Pega el token aquí
+        token_placeholder_update: Ingresa un nuevo token para actualizar
+        base_url_optional_label: URL base (opcional)
+        base_url_placeholder: https://api.mercury.com/api/v1 (por defecto)
+        save_configuration: Guardar configuración
+        update_configuration: Actualizar configuración
+        status_configured_html: Configurado y listo para usar. Visita la pestaña %{accounts_link} para gestionar y configurar cuentas.
+        status_not_configured: No configurado
+        accounts_tab: Cuentas
+      simplefin_panel:
+        setup_instructions: "Instrucciones de configuración:"
+        bridge_link: SimpleFIN Bridge
+        step1_html: Visita %{link} para obtener tu token de configuración de un solo uso
+        step2: Pega el token abajo y haz clic en Guardar para habilitar la sincronización bancaria de SimpleFIN
+        step3_html: Después de una conexión exitosa, ve a la pestaña %{accounts_link} para configurar nuevas cuentas y vincularlas con tus cuentas existentes
+        field_descriptions: "Descripción de campos:"
+        setup_token_label: Token de configuración
+        setup_token_description: Tu token de configuración de un solo uso de SimpleFIN Bridge (se consume en el primer uso)
+        setup_token_placeholder: Pega el token de configuración de SimpleFIN
+        save_configuration: Guardar configuración
+        status_configured_html: Configurado y listo para usar. Visita la pestaña %{accounts_link} para gestionar y configurar cuentas.
+        status_not_configured: No configurado
+        accounts_tab: Cuentas
+      coinbase_panel:
+        api_key_label: API Key
+        api_key_placeholder: Enter your Coinbase API key
+        api_secret_label: API Secret
+        api_secret_placeholder: Enter your Coinbase API secret
+        connect_button: Connect Coinbase
+        disconnect_confirm: Are you sure you want to disconnect this Coinbase connection?
+          Your synced accounts will become manual accounts.
+        setup_instructions: 'To connect Coinbase:'
+        status_connected: Coinbase is connected and syncing your crypto holdings.
+        status_not_connected: Not connected. Enter your API credentials above to get
+          started.
+        step1_html: Go to <a href="https://portal.cdp.coinbase.com/projects/api-keys"
+          target="_blank" class="text-primary underline">Coinbase API Settings</a>
+        step2: Create a new API key with read-only permissions (view accounts, view
+          transactions)
+        step3: Copy your API key and API secret and paste them below
+        sync: Sync
+        syncing: Syncing...
+      encryption_error:
+        message: Active Record encryption keys are not configured. Please ensure the
+          encryption credentials (active_record_encryption.primary_key, active_record_encryption.deterministic_key,
+          and active_record_encryption.key_derivation_salt) are properly set up in
+          your Rails credentials or environment variables before using sync providers.
+        title: Encryption Configuration Required
     securities:
       show:
         page_title: Seguridad
+        sso_confirm_body: Are you sure you want to disconnect your %{provider} account?
+          You can reconnect it later by signing in with that provider again.
+        sso_confirm_button: Disconnect
+        sso_confirm_title: Disconnect Account?
+        sso_connect_hint: Log out and sign in with an SSO provider to connect an account.
+        sso_disconnect: Disconnect
+        sso_last_used: Last used
+        sso_never: Never
+        sso_no_email: No email
+        sso_no_identities: No SSO accounts connected
+        sso_subtitle: Manage your single sign-on account connections
+        sso_title: Connected Accounts
+        sso_warning_message: This is your only login method. You should set a password
+          in your security settings before disconnecting, otherwise you may be locked
+          out of your account.
     settings_nav:
       accounts_label: Cuentas
       advanced_section_title: Avanzado
       ai_prompts_label: Indicaciones de IA
       api_key_label: Clave API
-      payment_label: Pago
+      api_keys_label: Clave API
+      bank_sync_label: Sincronización Bancaria
       categories_label: Categorías
+      exports_label: Exportaciones
       feedback_label: Comentarios
       general_section_title: General
+      guides_label: Guías
       imports_label: Importaciones
-      exports_label: Exportaciones
+      llm_usage_label: Uso de LLM
       logout: Cerrar sesión
       merchants_label: Comerciantes
-      guides_label: Guías
       other_section_title: Más
+      payment_label: Pago
       preferences_label: Preferencias
       profile_label: Información del Perfil
       recurring_transactions_label: Recurrentes
       rules_label: Reglas
       security_label: Seguridad
       self_hosting_label: Autoalojamiento
+      providers_label: Proveedores
+      sso_providers_label: Proveedores SSO
       tags_label: Etiquetas
       transactions_section_title: Transacciones
+      users_label: Usuarios
       whats_new_label: Novedades
-      api_keys_label: Clave API
-      bank_sync_label: Sincronización Bancaria
     settings_nav_link_large:
       next: Siguiente
       previous: Atrás
     user_avatar_field:
       accepted_formats: JPG o PNG. Máx. 5MB.
-      choose: Subir foto
-      choose_label: (opcional)
       change: Cambiar foto
+      choose: Subir foto
+      choose_label: "(opcional)"
+  views:
+    settings:
+      payments:
+        cancellation: Your contribution ends on %{date}.
+        renewal: Tu contribución continúa el %{date}.

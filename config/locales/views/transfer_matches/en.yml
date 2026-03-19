@@ -1,0 +1,20 @@
+---
+en:
+  transfer_matches:
+    matching_fields:
+      matching_method: Matching method
+      matching_transaction: Matching transaction
+      method_existing: Match existing transaction (recommended)
+      method_new: Create new transaction
+      no_candidates_message: We couldn't find any transactions to match from your other accounts. Please select an account and we will create a new inflow transaction for you.
+      select_method: Select a method for matching your transactions.
+      target_account: Target account
+    new:
+      from_account: From account
+      from_account_with_name: "From account: %{account}"
+      inflow_transaction: Inflow transaction
+      outflow_transaction: Outflow transaction
+      submit: Create transfer match
+      title: Match transfer or payment
+      to_account: To account
+      to_account_with_name: "To account: %{account}"

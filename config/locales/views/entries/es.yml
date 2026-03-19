@@ -10,5 +10,16 @@ es:
       title: No se encontraron entradas
     loading:
       loading: Cargando entradas...
+    protection:
+      description: La sincronización del proveedor no sobrescribirá las ediciones
+        de esta entrada.
+      locked_fields_label: 'Campos bloqueados:'
+      title: Protegido de sincronización
+      tooltip: Protegido de sincronización
+      unlock_button: Permitir sincronización para actualizar
+      unlock_confirm: "¿Permitir sincronización para actualizar esta entrada? Es posible
+        que sus cambios se sobrescriban en la próxima sincronización."
+    unlock:
+      success: Entrada desbloqueada. Es posible que se actualice en la próxima sincronización.
     update:
       success: Entrada actualizada

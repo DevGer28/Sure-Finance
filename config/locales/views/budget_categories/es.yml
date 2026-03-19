@@ -1,0 +1,28 @@
+---
+es:
+  budget_categories:
+    allocation_progress:
+      budget_exceeded_by_html: Presupuesto excedido por <span class="text-red-500">%{amount}</span>
+      left_to_allocate: por asignar
+      over_100_set: "> 100% asignado"
+      percent_set: "%{percent} asignado"
+    confirm_button:
+      confirm: Confirmar
+    no_categories:
+      description: Aún no has creado ni asignado categorías de gasto a tus transacciones.
+      new_category: Nueva categoría
+      oops: "¡Ups!"
+      use_defaults: Usar predeterminadas (recomendado)
+    show:
+      budgeted: Presupuestado
+      category: Categoría
+      left: disponible
+      monthly_average_spending: Gasto promedio mensual
+      monthly_median_spending: Gasto mediano mensual
+      no_transactions_found: No se encontraron transacciones para este período de presupuesto.
+      overview: Resumen
+      overspent: excedido
+      period_spending: gasto de %{period}
+      recent_transactions: Transacciones recientes
+      status: Estado
+      view_all_category_transactions: Ver todas las transacciones de la categoría

@@ -1,25 +1,142 @@
 ---
 es:
   rules:
+    confirm:
+      confirm_button: Confirmar cambios
+      description_html: Estás a punto de aplicar esta regla a <span class="text-primary font-medium">%{count} %{resource_type}</span> que cumplen los criterios especificados. Confirma si deseas continuar con este cambio.
+      title: Confirmar cambios
+      title_with_name: Confirmar cambios en "%{name}"
+    form:
+      add_action: Agregar acción
+      add_condition: Agregar condición
+      add_condition_group: Agregar grupo de condiciones
+      all_past_and_future: Todos los %{resource_type} pasados y futuros
+      for_label: PARA
+      if_label: SI
+      rule_name_optional: Nombre de la regla (opcional)
+      rule_name_placeholder: Ingresa un nombre para esta regla
+      starting_from: A partir de
+      then_label: ENTONCES
+    rule:
+      all_past_and_future: Todos los %{resource_type} pasados y futuros
+      delete: Eliminar
+      edit: Editar
+      for_label: PARA
+      if_label: SI
+      more_actions:
+        one: y %{count} acción más
+        other: y %{count} acciones más
+      more_conditions:
+        one: y %{count} condición más
+        other: y %{count} condiciones más
+      on_or_after: "%{resource_type} en o después de %{date}"
+      reapply_rule: Volver a aplicar regla
+      rule_resource: regla
+      then_label: ENTONCES
+      to: a
+    index:
+      all_rules: todas las reglas
+      delete_all: Eliminar todas las reglas
+      empty_description: Configura reglas para ejecutar acciones sobre tus transacciones y otros datos en cada sincronización de cuentas.
+      empty_title: Aún no hay reglas
+      new_rule: Nueva regla
+      self_hosted_ai_warning: Las acciones de reglas con IA tendrán costo. Filtra lo más específicamente posible para evitar costos innecesarios.
+      sort_by: "Ordenar por:"
+      sort_options:
+        name: Nombre
+        updated_at: Actualizada
+      title: Reglas
+      toggle_sort_direction: Cambiar dirección de orden
+    new:
+      back_to_rules: Volver a reglas
+      title_with_resource: Nueva regla de %{resource_type}
+    action_executors:
+      auto_categorize:
+        cost_estimate_suffix: " (~$%{amount} por cada 20 transacciones)"
+        cost_na_suffix: " (costo: N/D)"
+        no_provider_suffix: " (sin proveedor LLM configurado)"
+      labels:
+        auto_categorize: Categorizar transacciones automáticamente con IA
+        auto_detect_merchants: Detectar comercios automáticamente
+        auto_detect_merchants_with_ai: Detectar comercios automáticamente con IA ($$)
+        exclude_transaction: Excluir de presupuestos e informes
+        set_investment_activity_label: Establecer etiqueta de actividad de inversión
+        set_transaction_category: Establecer categoría de transacción
+        set_transaction_merchant: Establecer comercio de transacción
+        set_transaction_name: Establecer nombre de transacción
+        set_transaction_tags: Establecer etiquetas de transacción
+    actions:
+      to: a
+      value_placeholder: Introduce un valor
+    category_rule_cta:
+      create_rule: Crear regla
+      description: Puedes crear una regla para categorizar automáticamente transacciones como esta
+      dismiss: Descartar
+      dont_show_again: No volver a mostrar esto
+      message: Actualizado a %{category_name}
+    conditions:
+      group:
+        and: y
+        match: coincide
+        of_the_following_conditions: de las siguientes condiciones
+    apply_all:
+      ai_cost_message: Esto usará IA para categorizar hasta %{transactions} transacciones.
+      ai_cost_title: Estimación de costo de IA
+      button: Aplicar todo
+      confirm_button: Confirmar y aplicar todo
+      confirm_message: Estás a punto de aplicar %{count} reglas que afectan a %{transactions}
+        transacciones únicas. Confirma si deseas continuar.
+      confirm_title: Aplicar todas las reglas
+      cost_unavailable_model: Estimación de costo no disponible para el modelo "%{model}".
+      cost_unavailable_no_provider: Estimación de costo no disponible (no hay proveedor
+        LLM configurado).
+      cost_warning: Puedes incurrir en costos. Consulta con el proveedor del modelo
+        para obtener los precios más recientes.
+      estimated_cost: 'Costo estimado: ~$%{cost}'
+      success: Todas las reglas se han puesto en cola para su ejecución
+      view_usage: Ver historial de uso
+    condition_filters:
+      labels:
+        transaction_amount: Importe de transacción
+        transaction_category: Categoría de transacción
+        transaction_details: Detalles de transacción
+        transaction_merchant: Comercio de transacción
+        transaction_name: Nombre de transacción
+        transaction_notes: Notas de transacción
+        transaction_type: Tipo de transacción
+      operators:
+        contains: Contiene
+        equal_to: Igual a
+        greater_or_equal_to: Mayor o igual que
+        greater_than: Mayor que
+        is_empty: Está vacío
+        is_equal_to: Es igual a
+        less_than: Menor que
+        less_than_or_equal_to: Menor o igual que
+      transaction_type:
+        equal_to: Igual a
+        expense: Gasto
+        income: Ingreso
+        transfer: Transferencia
     no_action: Sin acción
     recent_runs:
-      title: Ejecuciones Recientes
-      description: Ver el historial de ejecución de tus reglas incluyendo el estado de éxito/fallo y los conteos de transacciones.
-      unnamed_rule: Regla Sin Nombre
       columns:
         date_time: Fecha/Hora
         execution_type: Tipo
-        status: Estado
         rule_name: Nombre de Regla
+        status: Estado
         transactions_counts:
-          queued: En Cola
-          processed: Procesadas
           modified: Modificadas
+          processed: Procesadas
+          queued: En Cola
+      description: Ver el historial de ejecución de tus reglas incluyendo el estado
+        de éxito/fallo y los conteos de transacciones.
       execution_types:
         manual: Manual
         scheduled: Programada
       statuses:
+        failed: Fallido
         pending: Pendiente
         success: Éxito
-        failed: Fallido
-
+      title: Ejecuciones Recientes
+      unnamed_rule: Regla Sin Nombre

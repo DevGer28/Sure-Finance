@@ -1,53 +1,153 @@
 ---
 es:
   simplefin_items:
-    new:
-      title: Conectar SimpleFin
-      setup_token: Token de configuración
-      setup_token_placeholder: pega tu token de configuración de SimpleFin
-      connect: Conectar
-      cancel: Cancelar
+    complete_account_setup:
+      all_skipped: Se omitieron todas las cuentas. No se creó ninguna cuenta.
+      no_accounts: No hay cuentas para configurar.
+      stale_accounts_errors:
+        one: "Falló %{count} acción de cuenta obsoleta. Revisa los logs para más detalles."
+        other: "Fallaron %{count} acciones de cuentas obsoletas. Revisa los logs para más detalles."
+      stale_accounts_processed: 'Cuentas obsoletas: %{deleted} eliminadas, %{moved} movidas.'
+      success: "¡Las cuentas de SimpleFin se han configurado con éxito! Tus transacciones
+        y activos se están importando en segundo plano."
     create:
-      success: ¡Conexión SimpleFin añadida con éxito! Tus cuentas aparecerán en breve mientras se sincronizan en segundo plano.
       errors:
         blank_token: Por favor, introduce un token de configuración de SimpleFin.
-        invalid_token: Token de configuración inválido. Por favor, verifica que has copiado el token completo desde SimpleFin Bridge.
-        token_compromised: El token de configuración puede estar comprometido, expirado o ya utilizado. Por favor, crea uno nuevo.
-        create_failed: "No se pudo conectar: %{message}"
-        unexpected: Ocurrió un error inesperado. Por favor, inténtalo de nuevo o contacta con soporte.
+        create_failed: 'No se pudo conectar: %{message}'
+        invalid_token: Token de configuración inválido. Por favor, verifica que has
+          copiado el token completo desde SimpleFin Bridge.
+        token_compromised: El token de configuración puede estar comprometido, expirado
+          o ya utilizado. Por favor, crea uno nuevo.
+        unexpected: Ocurrió un error inesperado. Por favor, inténtalo de nuevo o contacta
+          con soporte.
+      success: "¡Conexión SimpleFin añadida con éxito! Tus cuentas aparecerán en breve
+        mientras se sincronizan en segundo plano."
     destroy:
       success: La conexión SimpleFin será eliminada.
-    update:
-      success: ¡Conexión SimpleFin actualizada con éxito! Tus cuentas están siendo reconectadas.
-      errors:
-        blank_token: Por favor, introduce un token de configuración de SimpleFin.
-        invalid_token: Token de configuración inválido. Por favor, verifica que has copiado el token completo desde SimpleFin Bridge.
-        token_compromised: El token de configuración puede estar comprometido, expirado o ya utilizado. Por favor, crea uno nuevo.
-        update_failed: "No se pudo actualizar la conexión: %{message}"
-        unexpected: Ocurrió un error inesperado. Por favor, inténtalo de nuevo o contacta con soporte.
     edit:
+      cancel: Cancelar
+      instructions:
+        bridge_link: SimpleFIN Bridge
+        step1_html: Visita %{link} para crear un nuevo token de configuración
+        step2: Copia el token y pégalo abajo
+        step3: Haz clic en "Actualizar" para restaurar el acceso
+        title: "Tu conexión de SimpleFIN debe actualizarse:"
+      subtitle: Obtén un nuevo token de configuración para reconectar tu cuenta de SimpleFin
+      title: Actualizar conexión de SimpleFin
       setup_token:
-        label: "Token de configuración de SimpleFin:"
-        placeholder: "Pega aquí tu token de configuración de SimpleFin..."
-        help_text: "El token debería ser una cadena larga que comienza con letras y números."
-    complete_account_setup:
-      success: ¡Las cuentas de SimpleFin se han configurado con éxito! Tus transacciones y activos se están importando en segundo plano.
+        help_text: El token debería ser una cadena larga que comienza con letras y
+          números.
+        label: 'Token de configuración de SimpleFin:'
+        placeholder: Pega aquí tu token de configuración de SimpleFin...
+      update: Actualizar
+    link_existing_account:
+      errors:
+        invalid_simplefin_account: Se seleccionó una cuenta de SimpleFIN no válida
+        only_manual: Solo se pueden vincular cuentas manuales
+      success: Cuenta vinculada correctamente a SimpleFIN
+    new:
+      cancel: Cancelar
+      connect: Conectar
+      setup_token: Token de configuración
+      setup_token_placeholder: pega tu token de configuración de SimpleFin
+      title: Conectar SimpleFin
+    reconciled_status:
+      message:
+        one: "%{count} transacción pendiente duplicada conciliada"
+        other: "%{count} transacciones pendientes duplicadas conciliadas"
+    select_existing_account:
+      all_accounts_already_linked: Parece que todas las cuentas de SimpleFIN ya están vinculadas.
+      balance_with_currency: "%{currency} • Saldo: %{amount}"
+      cancel: Cancelar
+      check_provider_health: Revisar estado del proveedor
+      currently_linked_to: 'Actualmente vinculada a: %{account_name}'
+      description: Selecciona una cuenta de SimpleFIN para vincularla a tu cuenta existente
+      link_account: Vincular cuenta
+      no_accounts_found: No se encontraron cuentas de SimpleFIN para esta familia.
+      title: Vincular %{account_name} con SimpleFIN
+      unlink_to_move: Para mover un vínculo, primero desvincúlalo desde el menú de acciones de la cuenta.
+      wait_for_sync: Si acabas de conectar o sincronizar, inténtalo de nuevo cuando termine la sincronización.
+    setup_accounts:
+      account_type_guidance:
+        checking_or_savings: Cuenta corriente o de ahorro - Cuentas bancarias regulares
+        credit_card: Tarjeta de crédito - Cuentas de tarjeta de crédito
+        investment: Inversión - Cuentas de corretaje, 401(k), IRA
+        loan_or_mortgage: Préstamo o hipoteca - Cuentas de deuda
+        other_asset: Otro activo - Todo lo demás
+      account_type_guidance_title: "Elige el tipo de cuenta correcto para cada cuenta de SimpleFin:"
+      account_type_label: "Tipo de cuenta:"
+      balance_label: "Saldo: %{amount}"
+      cancel: Cancelar
+      create_accounts: Crear cuentas
+      creating_accounts: Creando cuentas...
+      stale_accounts:
+        action_delete: Eliminar cuenta y todas las transacciones
+        action_move: 'Mover transacciones a:'
+        action_prompt: ¿Qué te gustaría hacer?
+        action_skip: Omitir por ahora
+        description: Estas cuentas existen en tu base de datos, pero SimpleFIN ya no
+          las provee. Esto puede pasar cuando cambia la configuración de cuentas en
+          el proveedor.
+        title: Cuentas que ya no están en SimpleFIN
+        transaction_count:
+          one: "%{count} transacción"
+          other: "%{count} transacciones"
+      subtitle: Elige los tipos de cuenta correctos para tus cuentas importadas
+      title: Configurar tus cuentas de SimpleFin
+      transaction_history_description: SimpleFin normalmente proporciona entre 60 y 90 días de historial de transacciones, dependiendo de tu banco. Después de la configuración inicial, las nuevas transacciones se sincronizarán automáticamente en adelante. La disponibilidad de datos históricos varía por institución y tipo de cuenta.
+      transaction_history_title: "Historial de transacciones:"
     simplefin_item:
+      accounts_skipped_label: 'Omitidas: %{count}'
+      accounts_skipped_tooltip: Algunas cuentas se omitieron por errores durante la sincronización
       add_new: Añadir nueva conexión
       confirm_accept: Eliminar conexión
-      confirm_body: Esto eliminará permanentemente todas las cuentas de este grupo y todos los datos asociados.
-      confirm_title: ¿Eliminar conexión SimpleFin?
+      confirm_body: Esto eliminará permanentemente todas las cuentas de este grupo
+        y todos los datos asociados.
+      confirm_title: "¿Eliminar conexión SimpleFin?"
       delete: Eliminar
       deletion_in_progress: "(eliminación en progreso...)"
+      duplicate_accounts_skipped: Algunas cuentas se omitieron por duplicadas. Usa
+        'Vincular cuentas existentes' para fusionarlas.
       error: Ocurrió un error al sincronizar los datos
+      more_accounts_available:
+        one: "%{count} cuenta más disponible para configurar"
+        other: "%{count} cuentas más disponibles para configurar"
       no_accounts_description: Esta conexión aún no tiene cuentas sincronizadas.
       no_accounts_title: No se encontraron cuentas
+      rate_limited_ago: Limitado por tasa (hace %{time})
+      rate_limited_recently: Limitado por tasa recientemente
+      reconciled_details_note: "(ver resumen de sincronización para más detalles)"
       requires_update: Requiere reautenticación
-      setup_needed: Nuevas cuentas listas para configurar
-      setup_description: Elige los tipos de cuenta para tus nuevas cuentas importadas de SimpleFin.
+      setup_accounts_menu: Configurar cuentas
       setup_action: Configurar nuevas cuentas
+      setup_description: Elige los tipos de cuenta para tus nuevas cuentas importadas
+        de SimpleFin.
+      setup_needed: Nuevas cuentas listas para configurar
+      stale_pending_accounts: 'en: %{accounts}'
+      stale_pending_note: "(excluidas de presupuestos)"
       status: Última sincronización hace %{timestamp}
       status_never: Nunca sincronizado
-      status_with_summary: "Última sincronización hace %{timestamp} • %{summary}"
+      status_with_summary: Última sincronización hace %{timestamp} • %{summary}
       syncing: Sincronizando...
       update: Actualizar conexión
+    stale_pending_status:
+      message:
+        one: "%{count} transacción pendiente con más de %{days} días"
+        other: "%{count} transacciones pendientes con más de %{days} días"
+    subtype_select:
+      please_select: Selecciona un %{label}
+      select_label: Seleccionar %{label}
+      subtype: subtipo
+      type: tipo
+    update:
+      errors:
+        blank_token: Por favor, introduce un token de configuración de SimpleFin.
+        invalid_token: Token de configuración inválido. Por favor, verifica que has
+          copiado el token completo desde SimpleFin Bridge.
+        token_compromised: El token de configuración puede estar comprometido, expirado
+          o ya utilizado. Por favor, crea uno nuevo.
+        unexpected: Ocurrió un error inesperado. Por favor, inténtalo de nuevo o contacta
+          con soporte.
+        update_failed: 'No se pudo actualizar la conexión: %{message}'
+      success: "¡Conexión SimpleFin actualizada con éxito! Tus cuentas están siendo
+        reconectadas."

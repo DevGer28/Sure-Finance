@@ -9,6 +9,7 @@ export default class extends Controller {
     strokeWidth: { type: Number, default: 2 },
     useLabels: { type: Boolean, default: true },
     useTooltip: { type: Boolean, default: true },
+    variant: { type: String, default: "default" },
   };
 
   _d3SvgMemo = null;
@@ -115,11 +116,19 @@ export default class extends Controller {
   }
 
   _drawChart() {
-    this._drawTrendline();
+    if (this._isShadcnAreaVariant) {
+      if (this.useLabelsValue) {
+        this._drawGridLines();
+        this._drawXAxisLabels();
+      }
+      this._drawAreaTrendline();
+    } else {
+      this._drawTrendline();
 
-    if (this.useLabelsValue) {
-      this._drawXAxisLabels();
-      this._drawGradientBelowTrendline();
+      if (this.useLabelsValue) {
+        this._drawXAxisLabels();
+        this._drawGradientBelowTrendline();
+      }
     }
 
     if (this.useTooltipValue) {
@@ -136,6 +145,48 @@ export default class extends Controller {
       .datum(this._normalDataPoints)
       .attr("fill", "none")
       .attr("stroke", `url(#${this.element.id}-split-gradient)`)
+      .attr("d", this._d3Line)
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
+      .attr("stroke-width", this.strokeWidthValue);
+  }
+
+  _drawAreaTrendline() {
+    const gradientId = `${this.element.id}-area-fill-gradient`;
+
+    const gradient = this._d3Svg
+      .append("defs")
+      .append("linearGradient")
+      .attr("id", gradientId)
+      .attr("gradientUnits", "userSpaceOnUse")
+      .attr("x1", 0)
+      .attr("x2", 0)
+      .attr("y1", this._d3YScale(d3.max(this._normalDataPoints, this._getDatumValue)))
+      .attr("y2", this._d3ContainerHeight);
+
+    gradient
+      .append("stop")
+      .attr("offset", 0)
+      .attr("stop-color", this._trendColor)
+      .attr("stop-opacity", 0.35);
+
+    gradient
+      .append("stop")
+      .attr("offset", 1)
+      .attr("stop-color", this._trendColor)
+      .attr("stop-opacity", 0.02);
+
+    this._d3Group
+      .append("path")
+      .datum(this._normalDataPoints)
+      .attr("d", this._d3Area)
+      .attr("fill", `url(#${gradientId})`);
+
+    this._d3Group
+      .append("path")
+      .datum(this._normalDataPoints)
+      .attr("fill", "none")
+      .attr("stroke", this._trendColor)
       .attr("d", this._d3Line)
       .attr("stroke-linejoin", "round")
       .attr("stroke-linecap", "round")
@@ -223,12 +274,38 @@ export default class extends Controller {
       .attr("class", "fg-gray")
       .style("font-size", "12px")
       .style("font-weight", "500")
-      .attr("text-anchor", "middle")
+      .attr("text-anchor", (_d, i) =>
+        this._isShadcnAreaVariant ? (i === 0 ? "start" : "end") : "middle",
+      )
       .attr("dx", (_d, i) => {
+        if (this._isShadcnAreaVariant) {
+          return i === 0 ? "0.75em" : "-0.75em";
+        }
         // We know we only have 2 values
         return i === 0 ? "5em" : "-5em";
       })
       .attr("dy", "0em");
+  }
+
+  _drawGridLines() {
+    this._d3Group
+      .append("g")
+      .attr("class", "fg-subdued")
+      .call(
+        d3
+          .axisLeft(this._d3YScale)
+          .ticks(4)
+          .tickSize(-this._d3ContainerWidth)
+          .tickFormat(() => ""),
+      )
+      .call((group) => group.select(".domain").remove())
+      .call((group) =>
+        group
+          .selectAll(".tick line")
+          .attr("stroke", "currentColor")
+          .attr("stroke-opacity", 0.18),
+      )
+      .call((group) => group.selectAll(".tick text").remove());
   }
 
   _drawGradientBelowTrendline() {
@@ -317,15 +394,20 @@ export default class extends Controller {
           this._d3XScale.invert(xPos),
           1,
         );
-        const d0 = this._normalDataPoints[x0 - 1];
-        const d1 = this._normalDataPoints[x0];
+        const d0 = this._normalDataPoints[Math.max(0, x0 - 1)];
+        const d1 =
+          this._normalDataPoints[
+            Math.min(this._normalDataPoints.length - 1, x0)
+          ];
         const d =
           xPos - this._d3XScale(d0.date) > this._d3XScale(d1.date) - xPos
             ? d1
             : d0;
         const xPercent = this._d3XScale(d.date) / this._d3ContainerWidth;
 
-        this._setTrendlineSplitAt(xPercent);
+        if (!this._isShadcnAreaVariant) {
+          this._setTrendlineSplitAt(xPercent);
+        }
 
         // Reset
         this._d3Group.selectAll(".data-point-circle").remove();
@@ -379,7 +461,9 @@ export default class extends Controller {
           this._d3Group.selectAll(".guideline").remove();
           this._d3Group.selectAll(".data-point-circle").remove();
           this._d3Tooltip.style("opacity", 0);
-          this._setTrendlineSplitAt(1);
+          if (!this._isShadcnAreaVariant) {
+            this._setTrendlineSplitAt(1);
+          }
         }
       });
   }
@@ -479,6 +563,10 @@ export default class extends Controller {
   }
 
   get _margin() {
+    if (this._isShadcnAreaVariant && this.useLabelsValue) {
+      return { top: 12, right: 12, bottom: 20, left: 12 };
+    }
+
     if (this.useLabelsValue) {
       return { top: 20, right: 0, bottom: 10, left: 0 };
     }
@@ -506,10 +594,30 @@ export default class extends Controller {
   }
 
   get _d3Line() {
-    return d3
+    let line = d3
       .line()
       .x((d) => this._d3XScale(d.date))
       .y((d) => this._d3YScale(this._getDatumValue(d)));
+
+    if (this._isShadcnAreaVariant) {
+      line = line.curve(d3.curveNatural);
+    }
+
+    return line;
+  }
+
+  get _d3Area() {
+    let area = d3
+      .area()
+      .x((d) => this._d3XScale(d.date))
+      .y0(this._d3ContainerHeight)
+      .y1((d) => this._d3YScale(this._getDatumValue(d)));
+
+    if (this._isShadcnAreaVariant) {
+      area = area.curve(d3.curveNatural);
+    }
+
+    return area;
   }
 
   get _d3XScale() {
@@ -522,6 +630,18 @@ export default class extends Controller {
   get _d3YScale() {
     const dataMin = d3.min(this._normalDataPoints, this._getDatumValue);
     const dataMax = d3.max(this._normalDataPoints, this._getDatumValue);
+
+    if (this._isShadcnAreaVariant) {
+      const dataRange = dataMax - dataMin;
+      const padding =
+        dataRange === 0 ? Math.max(Math.abs(dataMax) * 0.1, 1) : dataRange * 0.2;
+
+      return d3
+        .scaleLinear()
+        .rangeRound([this._d3ContainerHeight, 0])
+        .domain([dataMin - padding, dataMax + padding])
+        .nice();
+    }
 
     // Handle edge case where all values are the same
     if (dataMin === dataMax) {
@@ -571,6 +691,10 @@ export default class extends Controller {
       .scaleLinear()
       .rangeRound([this._d3ContainerHeight, 0])
       .domain([yMin, yMax]);
+  }
+
+  get _isShadcnAreaVariant() {
+    return this.variantValue === "shadcn-area";
   }
 
   _setupResizeObserver() {

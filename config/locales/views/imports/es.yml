@@ -3,84 +3,236 @@ es:
   import:
     cleans:
       show:
+        all_rows: Todas las filas
+        cleaned_success: Tus datos han sido limpiados
         description: Edita tus datos en la tabla de abajo. Las celdas rojas son inválidas.
-        errors_notice: Tienes errores en tus datos. Pasa el ratón sobre el error para ver los detalles.
-        errors_notice_mobile: Tienes errores en tus datos. Toca el tooltip del error para ver los detalles.
+        error_rows: Filas con error
+        errors_notice: Tienes errores en tus datos. Pasa el ratón sobre el error para
+          ver los detalles.
+        errors_notice_mobile: Tienes errores en tus datos. Toca el tooltip del error
+          para ver los detalles.
+        next_step: Siguiente paso
         title: Limpia tus datos
     configurations:
+      category_import:
+        button_label: Continuar
+        description: Sube un archivo CSV simple (como el que generamos cuando exportas
+          tus datos). Mapearemos automáticamente las columnas por usted.
+        instructions: Seleccione continuar para analizar su CSV y continúe con el
+          paso de limpieza.
       mint_import:
+        preconfigured_notice: Hemos preconfigurado tu importación de Mint. Continúa con el siguiente paso.
+        leave_empty: Dejar vacío
+        date_label: Fecha
+        amount_label: Importe
+        incomes_negative: Los ingresos son negativos
+        incomes_positive: Los ingresos son positivos
+        currency_label: Moneda
+        format_label: Formato
+        select_format: Selecciona formato
+        account_optional_label: Cuenta (opcional)
+        name_optional_label: Nombre (opcional)
+        category_optional_label: Categoría (opcional)
+        tags_optional_label: Etiquetas (opcional)
+        apply_configuration: Aplicar configuración
         date_format_label: Formato de fecha
+      account_import:
+        leave_empty: Dejar vacío
+        default: Predeterminado
+        entity_type_label: Tipo de entidad
+        name_label: Nombre
+        balance_label: Saldo
+        currency_label: Moneda
+        balance_date_label: Fecha de saldo
+        date_format_label: Formato de fecha
+        select_format: Selecciona formato
+        apply_configuration: Aplicar configuración
+      rule_import:
+        description: Configure su importación de reglas. Las reglas se crearán o actualizarán
+          en función de los datos CSV.
+        process_button: Reglas del proceso
+        process_help: Haga clic en el botón a continuación para procesar su CSV y
+          generar filas de reglas.
       show:
+        apply_template: Aplicar plantilla
         description: Selecciona las columnas que corresponden a cada campo en tu CSV.
+        manually_configure: Configurar manualmente
+        sample_data_caption: Datos de ejemplo de tu CSV subido
+        template_configuration_description: Encontramos una configuración de una importación anterior para esta cuenta. ¿Quieres aplicarla a esta importación?
+        template_configuration_found: Se encontró una configuración de plantilla
         title: Configura tu importación
       trade_import:
+        select_column: Selecciona columna
+        leave_empty: Dejar vacío
+        default: Predeterminado
+        date_label: Fecha
+        quantity_label: Cantidad
+        buys_positive_qty: Las compras son cantidad positiva
+        buys_negative_qty: Las compras son cantidad negativa
+        currency_label: Moneda
+        format_label: Formato
+        select_format: Selecciona formato
+        ticker_label: Ticker
+        stock_exchange_code_label: Código de bolsa
+        price_label: Precio
+        account_label: Cuenta
+        name_label: Nombre
+        note_label: "Nota:"
+        security_provider_warning: El proveedor de precios de valores no está configurado. La importación de operaciones funcionará, pero Sure no completará el historial de precios. Ve a configuración para activarlo.
+        apply_configuration: Aplicar configuración
         date_format_label: Formato de fecha
       transaction_import:
+        date_label: Fecha
+        amount_label: Importe
+        currency_label: Moneda
+        format_label: Formato
+        amount_type_strategy_label: Estrategia de tipo de importe
+        amount_type_label: Tipo de importe
+        select_column: Selecciona columna
+        select_format: Selecciona formato
+        select_strategy: Selecciona estrategia
+        select_convention: Selecciona convención
+        select_value: Selecciona valor
+        select_type: Selecciona tipo
+        default: Predeterminado
+        leave_empty: Dejar vacío
+        set: Establecer
+        as_amount_type_column: como columna de tipo de importe
+        as_identifier_value: como valor identificador
+        treat_identifier_as: Tratar "%{identifier}" como
+        income_inflow: Ingreso (entrada)
+        expense_outflow: Gasto (salida)
+        incomes_positive: Los ingresos son positivos
+        incomes_negative: Los ingresos son negativos
+        account_label: Cuenta
+        name_label: Nombre
+        category_label: Categoría
+        tags_label: Etiquetas
+        notes_label: Notas
+        apply_configuration: Aplicar configuración
         date_format_label: Formato de fecha
+        rows_to_skip_label: Saltar las primeras n filas
+      update:
+        success: Importación configurada correctamente.
     confirms:
       mappings:
         create_account: Crear cuenta
         csv_mapping_label: "%{mapping} en CSV"
-        sure_mapping_label: "%{mapping} en %{product_name}"
-        no_accounts: Aún no tienes cuentas. Por favor, crea una cuenta que podamos usar para las filas 
-          (sin asignar) en tu CSV o vuelve al paso de Limpieza y proporciona un nombre de cuenta que podamos usar.
+        next: Siguiente
+        no_accounts: Aún no tienes cuentas. Por favor, crea una cuenta que podamos
+          usar para las filas (sin asignar) en tu CSV o vuelve al paso de Limpieza
+          y proporciona un nombre de cuenta que podamos usar.
         rows_label: Filas
-        unassigned_account: ¿Necesitas crear una nueva cuenta para las filas sin asignar?
+        sure_mapping_label: "%{mapping} en %{product_name}"
+        unassigned_account: "¿Necesitas crear una nueva cuenta para las filas sin
+          asignar?"
       show:
-        account_mapping_description: Asigna todas las cuentas de tu archivo importado a las cuentas existentes de Sure. 
-          También puedes añadir nuevas cuentas o dejarlas sin categorizar.
+        account_mapping_description: Asigna todas las cuentas de tu archivo importado
+          a las cuentas existentes de Sure. También puedes añadir nuevas cuentas o
+          dejarlas sin categorizar.
         account_mapping_title: Asigna tus cuentas
-        account_type_mapping_description: Asigna todos los tipos de cuenta de tu archivo importado a los de Sure.
+        account_type_mapping_description: Asigna todos los tipos de cuenta de tu archivo
+          importado a los de Sure.
         account_type_mapping_title: Asigna tus tipos de cuenta
-        category_mapping_description: Asigna todas las categorías de tu archivo importado a las categorías existentes de Sure. 
-          También puedes añadir nuevas categorías o dejarlas sin categorizar.
+        category_mapping_description: Asigna todas las categorías de tu archivo importado
+          a las categorías existentes de Sure. También puedes añadir nuevas categorías
+          o dejarlas sin categorizar.
         category_mapping_title: Asigna tus categorías
-        tag_mapping_description: Asigna todas las etiquetas de tu archivo importado a las etiquetas existentes de Sure. 
-          También puedes añadir nuevas etiquetas o dejarlas sin categorizar.
+        tag_mapping_description: Asigna todas las etiquetas de tu archivo importado
+          a las etiquetas existentes de Sure. También puedes añadir nuevas etiquetas
+          o dejarlas sin categorizar.
         tag_mapping_title: Asigna tus etiquetas
     uploads:
       show:
-        description: Pega o sube tu archivo CSV abajo. Por favor, revisa las instrucciones en la tabla de abajo antes de comenzar.
-        instructions_1: Abajo hay un ejemplo de CSV con columnas disponibles para importar.
+        overlay_title: Suelta el CSV para subirlo
+        overlay_subtitle: Tu archivo se subirá automáticamente
+        tab_upload_csv: Subir CSV
+        tab_copy_paste: Copiar y pegar
+        account_optional_label: Cuenta (opcional)
+        multi_account_import: Importación de múltiples cuentas
+        browse: Explorar
+        browse_help: para agregar tu archivo CSV aquí
+        submit_upload_csv: Subir CSV
+        paste_placeholder: Pega aquí el contenido de tu archivo CSV
+        sample_csv_link: Descargar un CSV de ejemplo
+        sample_csv_html: "%{link} para ver el formato CSV requerido"
+        description: Pega o sube tu archivo CSV abajo. Por favor, revisa las instrucciones
+          en la tabla de abajo antes de comenzar.
+        instructions_1: Abajo hay un ejemplo de CSV con columnas disponibles para
+          importar.
         instructions_2: Tu CSV debe tener una fila de encabezado.
-        instructions_3: Puedes nombrar tus columnas como prefieras. Las mapearás en un paso posterior.
+        instructions_3: Puedes nombrar tus columnas como prefieras. Las mapearás en
+          un paso posterior.
         instructions_4: Las columnas marcadas con un asterisco (*) son datos obligatorios.
-        instructions_5: Sin comas, sin símbolos de moneda y sin paréntesis en los números.
+        instructions_5: Sin comas, sin símbolos de moneda y sin paréntesis en los
+          números.
         title: Importa tus datos
   imports:
+    failure:
+      description: Revisa el formato de tu archivo, posibles errores y que todos
+        los campos requeridos estén completos, luego inténtalo de nuevo.
+      title: La importación falló
+      try_again: Intentar de nuevo
+    importing:
+      back_to_dashboard: Volver al panel
+      check_status: Ver estado
+      description: Tu importación está en progreso. Revisa el menú de importaciones
+        para ver actualizaciones de estado o haz clic en "Ver estado" para refrescar
+        la página.
+      title: Importación en progreso
+    errors:
+      custom_column_requires_inflow: Las importaciones de columnas personalizadas
+        requieren que se seleccione una columna de entrada
     index:
-      title: Importaciones
       new: Nueva importación
-    table:
-      title: Imports
-      header:
-        date: Fecha
-        operation: Operation
-        status: Estado
-        actions: Acciones
-      row:
-        status:
-          in_progress: En progreso
-          uploading: Procesando filas
-          reverting: Revirtiendo
-          revert_failed: Reversión fallida
-          complete: Completado
-          failed: Fallido
-        actions:
-          revert: Revertir
-          confirm_revert: Esto eliminará las transacciones que se importaron, pero aún podrá revisar y volver a importar sus datos en cualquier momento.
-          delete: Eliminar
-          view: Ver
-      empty: Aún no hay importaciones.
+      title: Importaciones
     new:
-      description: Puedes importar manualmente varios tipos de datos mediante CSV o usar una de nuestras plantillas de importación como Mint.
+      description: Puedes importar manualmente varios tipos de datos mediante CSV
+        o usar una de nuestras plantillas de importación como Mint.
       import_accounts: Importar cuentas
+      import_categories: Importar categorías
       import_mint: Importar desde Mint
       import_portfolio: Importar inversiones
+      import_rules: Reglas de importación
       import_transactions: Importar transacciones
       resume: Reanudar %{type}
       sources: Fuentes
       title: Nueva importación CSV
     ready:
-      description: Aquí tienes un resumen de los nuevos elementos que se añadirán a tu cuenta una vez publiques esta importación.
+      count: cantidad
+      description: Aquí tienes un resumen de los nuevos elementos que se añadirán
+        a tu cuenta una vez publiques esta importación.
+      item: elemento
+      publish_import: Publicar importación
       title: Confirma tus datos de importación
+    revert_failure:
+      description: Por favor, inténtalo de nuevo.
+      title: Falló la reversión de la importación
+      try_again: Intentar de nuevo
+    success:
+      back_to_dashboard: Volver al panel
+      description: Tus datos importados se agregaron correctamente y ya están listos
+        para usarse.
+      title: Importación exitosa
+    table:
+      empty: Aún no hay importaciones.
+      header:
+        actions: Acciones
+        date: Fecha
+        operation: Operación
+        status: Estado
+      row:
+        actions:
+          confirm_revert: Esto eliminará las transacciones que se importaron, pero
+            aún podrá revisar y volver a importar sus datos en cualquier momento.
+          delete: Eliminar
+          revert: Revertir
+          view: Ver
+        status:
+          complete: Completado
+          failed: Fallido
+          in_progress: En progreso
+          revert_failed: Reversión fallida
+          reverting: Revirtiendo
+          uploading: Procesando filas
+      title: Importaciones

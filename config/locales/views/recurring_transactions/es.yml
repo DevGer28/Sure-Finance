@@ -1,38 +1,54 @@
 ---
 es:
   recurring_transactions:
-    title: Transacciones Recurrentes
-    upcoming: Próximas Transacciones Recurrentes
+    already_exists: A manual recurring transaction already exists for this pattern
+    amount_range: 'Range: %{min} to %{max}'
+    badges:
+      manual: Manual
+    cleaned_up: Limpiadas %{count} transacciones recurrentes obsoletas
+    cleanup_stale: Limpiar Obsoletos
+    confirm_delete: "¿Estás seguro de que deseas eliminar esta transacción recurrente?"
+    creation_failed: Failed to create recurring transaction. Please check the transaction
+      details and try again.
+    day_of_month: Día %{day} del mes
+    deleted: Transacción recurrente eliminada
+    empty:
+      description: Haz clic en "Identificar Patrones" para detectar automáticamente
+        transacciones recurrentes de tu historial de transacciones.
+      title: No se encontraron transacciones recurrentes
+    expected_on: Esperado el %{date}
+    identified: Identificados %{count} patrones de transacciones recurrentes
+    identify_patterns: Identificar Patrones
+    info:
+      automatic_description: 'La identificación automática también se ejecuta después
+        de:'
+      manual_description: Puedes identificar patrones manualmente o limpiar transacciones
+        recurrentes obsoletas usando los botones de arriba.
+      title: Detección Automática de Patrones
+      triggers:
+      - Finalización de importaciones CSV (transacciones, operaciones, cuentas, etc.)
+      - Finalización de cualquier sincronización de proveedor (Plaid, SimpleFIN, etc.)
+    marked_active: Transacción recurrente marcada como activa
+    marked_as_recurring: Transaction marked as recurring
+    marked_inactive: Transacción recurrente marcada como inactiva
     projected: Proyectado
     recurring: Recurrente
-    expected_on: Esperado el %{date}
-    day_of_month: Día %{day} del mes
-    identify_patterns: Identificar Patrones
-    cleanup_stale: Limpiar Obsoletos
-    info:
-      title: Detección Automática de Patrones
-      manual_description: Puedes identificar patrones manualmente o limpiar transacciones recurrentes obsoletas usando los botones de arriba.
-      automatic_description: "La identificación automática también se ejecuta después de:"
-      triggers:
-        - Finalización de importaciones CSV (transacciones, operaciones, cuentas, etc.)
-        - Finalización de cualquier sincronización de proveedor (Plaid, SimpleFIN, etc.)
-    identified: Identificados %{count} patrones de transacciones recurrentes
-    cleaned_up: Limpiadas %{count} transacciones recurrentes obsoletas
-    marked_inactive: Transacción recurrente marcada como inactiva
-    marked_active: Transacción recurrente marcada como activa
-    deleted: Transacción recurrente eliminada
-    confirm_delete: ¿Estás seguro de que deseas eliminar esta transacción recurrente?
-    empty:
-      title: No se encontraron transacciones recurrentes
-      description: Haz clic en "Identificar Patrones" para detectar automáticamente transacciones recurrentes de tu historial de transacciones.
-    table:
-      merchant: Comerciante
-      amount: Importe
-      expected_day: Día Esperado
-      next_date: Próxima Fecha
-      last_occurrence: Última Ocurrencia
-      status: Estado
-      actions: Acciones
+    settings:
+      enable_description: Automatically detect recurring transaction patterns and
+        show upcoming projected transactions.
+      enable_label: Enable Recurring Transactions
+    settings_updated: Recurring transactions settings updated
     status:
       active: Activa
       inactive: Inactiva
+    table:
+      actions: Acciones
+      amount: Importe
+      expected_day: Día Esperado
+      last_occurrence: Última Ocurrencia
+      merchant: Comerciante
+      next_date: Próxima Fecha
+      status: Estado
+    title: Transacciones Recurrentes
+    unexpected_error: An unexpected error occurred while creating the recurring transaction
+    upcoming: Próximas Transacciones Recurrentes

@@ -1,14 +1,17 @@
 ---
 es:
   password_resets:
+    disabled: El restablecimiento de contraseña vía Sure está deshabilitado. Restablece tu contraseña a través de tu proveedor de identidad.
     edit:
       title: Restablecer contraseña
     new:
-      requested: Por favor, revisa tu correo electrónico para obtener 
-        un enlace para restablecer tu contraseña.
+      back: Volver
+      email_placeholder: tu@email.com
+      requested: Por favor, revisa tu correo electrónico para obtener un enlace para
+        restablecer tu contraseña.
       submit: Restablecer contraseña
       title: Restablecer contraseña
-      back: Volver
+    sso_only_user: Tu cuenta usa SSO para autenticación. Contacta a tu administrador para gestionar tus credenciales.
     update:
       invalid_token: Token inválido.
       success: Tu contraseña ha sido restablecida.

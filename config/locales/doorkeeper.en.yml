@@ -65,6 +65,7 @@ en:
         authorize: 'Authorize'
         deny: 'Deny'
       error:
+        go_back: 'Go back'
         title: 'An error has occurred'
       new:
         title: 'Authorization required'

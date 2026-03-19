@@ -6,31 +6,68 @@ es:
       success: Nuevo comercio creado con éxito
     destroy:
       success: Comercio eliminado con éxito
+      unlinked_success: Comercio desvinculado de tus transacciones
     edit:
       title: Editar comercio
     form:
       name_placeholder: Nombre del comercio
+      website_hint: Introduce el sitio web del comercio para mostrar su logo automáticamente
+      website_placeholder: Sitio web (p. ej., starbucks.com)
     index:
       empty: Aún no hay comercios
-      new: Nuevo comercio
-      title: Comercios
-      family_title: Comercios familiares
       family_empty: Aún no hay comercios familiares
-      provider_title: Comercios del proveedor
+      family_title: Comercios familiares
+      merge: Unificar comercios
+      new: Nuevo comercio
       provider_empty: Ningún comercio del proveedor vinculado a esta familia todavía
-      provider_read_only: Los comercios del proveedor se sincronizan desde tus instituciones conectadas. No se pueden editar aquí.
+      provider_info: Estos comercios se detectaron automáticamente mediante tus conexiones
+        bancarias o IA. Puedes editarlos para crear tu propia copia o quitarlos para
+        desvincularlos de tus transacciones.
+      provider_read_only: Los comercios del proveedor se sincronizan desde tus instituciones
+        conectadas. No se pueden editar aquí.
+      provider_title: Comercios del proveedor
       table:
-        merchant: Comercio
         actions: Acciones
+        merchant: Comercio
         source: Origen
+      title: Comercios
+      unlinked_info: Estos comercios se eliminaron recientemente de tus transacciones.
+        Desaparecerán de esta lista después de 30 días, salvo que vuelvan a asignarse
+        a una transacción.
+      unlinked_title: Desvinculados recientemente
     merchant:
       confirm_accept: Eliminar comercio
-      confirm_body: ¿Estás seguro de que deseas eliminar este comercio? Eliminar este comercio
-        desvinculará todas las transacciones asociadas y puede afectar a tus informes.
-      confirm_title: ¿Eliminar comercio?
+      confirm_body: "¿Estás seguro de que deseas eliminar este comercio? Eliminar
+        este comercio desvinculará todas las transacciones asociadas y puede afectar
+        a tus informes."
+      confirm_title: "¿Eliminar comercio?"
       delete: Eliminar comercio
       edit: Editar comercio
+    merge:
+      description: Selecciona un comercio objetivo y los comercios que deseas unificar
+        en él. Todas las transacciones de los comercios unificados se reasignarán
+        al objetivo.
+      select_target: Selecciona comercio objetivo...
+      sources_hint: Los comercios seleccionados se unificarán en el objetivo. Los
+        comercios familiares se eliminarán y los del proveedor se desvincularán.
+      sources_label: Comercios para unificar
+      submit: Unificar seleccionados
+      target_label: Unificar en (objetivo)
+      title: Unificar comercios
     new:
       title: Nuevo comercio
+    perform_merge:
+      invalid_merchants: Comercios seleccionados no válidos
+      no_merchants_selected: No se seleccionaron comercios para unificar
+      success: Se unificaron correctamente %{count} comercios
+      target_not_found: No se encontró el comercio objetivo
+    provider_merchant:
+      edit: Editar
+      remove: Quitar
+      remove_confirm_body: "¿Seguro que quieres quitar %{name}? Esto desvinculará
+        todas las transacciones asociadas a este comercio, pero no eliminará el comercio
+        en sí."
+      remove_confirm_title: "¿Quitar comercio?"
     update:
+      converted_success: Comercio convertido y actualizado correctamente
       success: Comercio actualizado con éxito

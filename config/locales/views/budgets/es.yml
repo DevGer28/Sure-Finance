@@ -1,0 +1,40 @@
+---
+es:
+  budgets:
+    actuals_summary:
+      expenses: Gastos
+      income: Ingresos
+    budget_donut:
+      new_budget: Nuevo presupuesto
+      of_amount: de %{amount}
+      spent: Gastado
+      unused: Sin usar
+    budget_categories:
+      amount: Monto
+      categories: Categorías
+    budget_header:
+      today: Hoy
+    budgeted_summary:
+      budgeted: Presupuestado
+      earned: "%{amount} ganados"
+      expected_income: Ingresos esperados
+      left: "%{amount} restantes"
+      over: "%{amount} por encima"
+      spent: "%{amount} gastados"
+    edit:
+      autosuggest_description: Esto se basará en el historial de transacciones. La IA puede equivocarse, verifica antes de continuar.
+      autosuggest_title: Sugerencia automática de ingresos y presupuesto de gastos
+      budgeted_spending: Gasto presupuestado
+      continue: Continuar
+      expected_income: Ingreso esperado
+      setup_description: Ingresa tus ingresos mensuales y el gasto planificado para configurar tu presupuesto.
+      setup_title: Configura tu presupuesto
+    over_allocation_warning:
+      description: Has sobreasignado tu presupuesto. Por favor corrige tus asignaciones.
+      fix_allocations: Corregir asignaciones
+    show:
+      categories: Categorías
+      edit: Editar
+      tabs:
+        actual: Actual
+        budgeted: Presupuestado

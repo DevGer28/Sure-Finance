@@ -71,6 +71,8 @@ en:
       available_accounts: "Available Accounts"
       balance_label: "Balance:"
       account_number: "Account:"
+      sync_start_date_help: "Leave blank for all available history"
+      sync_start_date_label: "Import transactions from:"
       create_button: "Create Selected Accounts"
       cancel_button: "Cancel"
       creating: "Creating Accounts..."

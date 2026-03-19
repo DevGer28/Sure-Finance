@@ -1,0 +1,72 @@
+---
+es:
+  coinstats_items:
+    coinstats_item:
+      delete: Borrar
+      deletion_in_progress: Los datos de la billetera criptográfica se están eliminando...
+      no_wallets_message: Actualmente no hay billeteras criptográficas conectadas
+        a CoinStats.
+      no_wallets_title: No hay billeteras criptográficas conectadas
+      provider_name: Estadísticas de monedas
+      reconnect: Reconectar
+      status: Última sincronización hace %{timestamp}
+      status_never: Nunca sincronizado
+      status_with_summary: Última sincronización hace %{timestamp} • %{summary}
+      sync_status:
+        all_synced:
+          one: "%{count} billetera criptográfica sincronizada"
+          other: "%{count} billeteras criptográficas sincronizadas"
+        no_accounts: No se encontraron billeteras criptográficas
+        partial_sync: "%{linked_count} billeteras criptográficas sincronizadas, %{unlinked_count}
+          necesita configuración"
+      syncing: Sincronizando…
+      update_api_key: Actualizar clave API
+    create:
+      default_name: Conexión CoinStats
+      errors:
+        validation_failed: 'Error de validación: %{message}.'
+      success: La conexión del proveedor de CoinStats se configuró correctamente.
+    destroy:
+      success: Conexión del proveedor de CoinStats programada para eliminación.
+    link_wallet:
+      error: 'Error al vincular la billetera criptográfica: %{message}.'
+      failed: Error al vincular la billetera criptográfica.
+      missing_params: 'Faltan parámetros requeridos: dirección y blockchain.'
+      success: "%{count} billeteras criptográficas vinculadas correctamente."
+    new:
+      address_label: DIRECCIÓN
+      address_placeholder: Requerido
+      api_key_label: Clave API
+      api_key_placeholder: Requerido
+      blockchain_fetch_error: Error al cargar Blockchains. Inténtelo de nuevo más
+        tarde.
+      blockchain_label: cadena de bloques
+      blockchain_placeholder: Requerido
+      blockchain_select_blank: Seleccione una cadena de bloques
+      configure: Configurar
+      default_name: Conexión CoinStats
+      go_to_settings: Vaya a Configuración del proveedor
+      link: Vincular billetera criptográfica
+      not_configured_message: Para vincular una billetera criptográfica, primero debe
+        configurar la conexión del proveedor de CoinStats.
+      not_configured_step1_html: Vaya a <strong>Configuración → Proveedores</strong>
+      not_configured_step2_html: Localice el proveedor <strong>CoinStats</strong>
+      not_configured_step3_html: Siga las <strong>instrucciones de configuración</strong>
+        proporcionadas para completar la configuración del proveedor
+      not_configured_title: Conexión del proveedor de CoinStats no configurada
+      setup_instructions: 'Instrucciones de configuración:'
+      status_configured_html: Preparado para usar
+      status_not_configured: No configurado
+      step1_html: Visite el <a href="https://openapi.coinstats.app/" class="link"
+        target="_blank" rel="noopener noreferrer">CoinStats Public API Dashboard</a>
+        para obtener una clave API.
+      step2: Ingrese su clave API a continuación y haga clic en Configurar.
+      step3_html: Después de una conexión exitosa, visite la pestaña <a href="__PROTECTED_0__"
+        class="link" data-turbo-frame="_top">Cuentas</a> para configurar billeteras
+        criptográficas.
+      title: Vincular una billetera criptográfica con CoinStats
+      update_configuration: Reconfigurar
+    update:
+      errors:
+        validation_failed: 'Error de validación: %{message}.'
+      success: La conexión del proveedor de CoinStats se actualizó correctamente.

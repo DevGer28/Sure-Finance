@@ -26,14 +26,17 @@ class UsersController < ApplicationController
       end
     else
       was_ai_enabled = @user.ai_enabled
-      @user.update!(user_params.except(:redirect_to, :delete_profile_image))
+      update_params = user_params.except(:redirect_to, :delete_profile_image)
+      sync_locale_with_family_preference!(update_params)
+
+      @user.update!(update_params)
       @user.profile_image.purge if should_purge_profile_image?
 
       # Add a special notice if AI was just enabled or disabled
       notice = if !was_ai_enabled && @user.ai_enabled
-        "AI Assistant has been enabled successfully."
+        t(".ai_enabled")
       elsif was_ai_enabled && !@user.ai_enabled
-        "AI Assistant has been disabled."
+        t(".ai_disabled")
       else
         t(".success")
       end
@@ -100,6 +103,15 @@ class UsersController < ApplicationController
 
     def rule_prompt_settings_params
       params.require(:user).permit(:rule_prompt_dismissed_at, :rule_prompts_disabled)
+    end
+
+    def sync_locale_with_family_preference!(update_params)
+      return if update_params[:locale].present?
+
+      family_locale = update_params.dig(:family_attributes, :locale)
+      return if family_locale.blank?
+
+      update_params[:locale] = family_locale
     end
 
     def user_params

@@ -1,5 +1,59 @@
 ---
 en:
+  balance_reconciliation:
+    labels:
+      adjustments: Adjustments
+      buys: Buys
+      change_in_brokerage_cash: Change in brokerage cash
+      change_in_holdings_buys_sells: Change in holdings (buys/sells)
+      change_in_holdings_market_activity: Change in holdings (market price activity)
+      charges: Charges
+      end_balance: End balance
+      end_principal: End principal
+      end_value: End value
+      final_balance: Final balance
+      final_principal: Final principal
+      final_value: Final value
+      market_changes: Market changes
+      net_cash_flow: Net cash flow
+      net_principal_change: Net principal change
+      net_value_change: Net value change
+      payments: Payments
+      sells: Sells
+      start_balance: Start balance
+      start_principal: Start principal
+      start_value: Start value
+    tooltips:
+      account_balance_start_day: The account balance at the beginning of this day
+      account_end_balance_calculated: The calculated balance after all transactions
+      account_final_balance_day: The final account balance for the day
+      account_net_cash_flow: Net change in balance from all transactions during the day
+      asset_end_value_calculated: The calculated value after all changes
+      asset_final_value_day: The final asset value for the day
+      asset_manual_adjustments_appraisals: Manual value adjustments or appraisals
+      asset_net_value_change_day: All value changes including improvements and depreciation
+      asset_value_start_day: The asset value at the beginning of this day
+      credit_card_balance_owed_start_day: The balance owed at the beginning of this day
+      credit_card_final_balance_owed_day: The final balance owed for the day
+      credit_card_new_charges_day: New charges made during the day
+      credit_card_payments_day: Payments made to the card during the day
+      crypto_end_balance_calculated: The calculated balance after all activity
+      crypto_final_holdings_value_day: The final crypto holdings value for the day
+      crypto_holdings_value_start_day: The crypto holdings value at the beginning of this day
+      crypto_market_price_changes: Value changes from market price movements
+      crypto_purchases_day: Crypto purchases during the day
+      crypto_sales_day: Crypto sales during the day
+      investment_change_in_brokerage_cash: Net change in cash from deposits, withdrawals, and trades
+      investment_change_in_holdings_buys_sells: Impact on holdings from buying and selling securities
+      investment_change_in_holdings_market_activity: Change in holdings value from market price movements
+      investment_end_balance_calculated: The calculated balance after all activity
+      investment_final_portfolio_value_day: The final portfolio value for the day
+      investment_portfolio_value_start_day: The total portfolio value at the beginning of this day
+      loan_end_principal_calculated: The calculated principal after all transactions
+      loan_final_principal_day: The final principal balance for the day
+      loan_net_principal_change_day: Principal payments and new borrowing during the day
+      loan_principal_start_day: The principal balance at the beginning of this day
+      manual_adjustments: Manual reconciliations or other adjustments
   provider_sync_summary:
     title: Sync summary
     last_sync: "Last sync: %{time_ago} ago"

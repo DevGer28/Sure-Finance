@@ -4,28 +4,43 @@ es:
     access_denied: Acceso denegado
     create:
       success: Exportación iniciada. Podrás descargarla en breve.
-    delete_confirmation: ¿Estás seguro de que quieres eliminar esta exportación? Esta acción no se puede deshacer.
-    delete_failed_confirmation: ¿Estás seguro de que quieres eliminar esta exportación fallida?
+    delete_confirmation: "¿Estás seguro de que quieres eliminar esta exportación?
+      Esta acción no se puede deshacer."
+    delete_failed_confirmation: "¿Estás seguro de que quieres eliminar esta exportación
+      fallida?"
     destroy:
       success: Exportación eliminada con éxito
     export_not_ready: La exportación no está lista para descargar
     exporting: Exportando...
     index:
-      title: Exportaciones
       new: Nueva exportación
-    table:
       title: Exportaciones
+    new:
+      cancel: Cancelar
+      included:
+        accounts_and_balances: Todas las cuentas y saldos
+        categories_tags_rules: Categorías, etiquetas y reglas
+        investment_trades: Operaciones de inversión
+        transaction_history: Historial de transacciones
+      included_title: "Qué incluye:"
+      note_body: Esta exportación incluye todos tus datos, pero solo parte de ellos puede volver a importarse mediante la función de importación CSV. Soportamos importación de cuentas, transacciones (con categoría y etiquetas) y operaciones. Otros datos de cuentas no se pueden importar y son solo para tu registro.
+      note_label: "Nota:"
+      submit: Exportar datos
+      subtitle: Descarga todos tus datos financieros
+      title: Exporta tus datos
+    table:
+      empty: Aún no hay exportaciones.
       header:
+        actions: Acciones
         date: Fecha
         filename: Nombre del archivo
         status: Estado
-        actions: Acciones
       row:
-        status:
-          in_progress: En progreso
-          complete: Completo
-          failed: Fallido
         actions:
           delete: Eliminar
           download: Descargar
-      empty: Aún no hay exportaciones.
+        status:
+          complete: Completo
+          failed: Fallido
+          in_progress: En progreso
+      title: Exportaciones

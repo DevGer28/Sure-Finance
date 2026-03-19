@@ -3,11 +3,15 @@ en:
   import:
     cleans:
       show:
+        all_rows: All rows
+        cleaned_success: Your data has been cleaned
         description: Edit your data in the table below.  Red cells are invalid.
+        error_rows: Error rows
         errors_notice: You have errors in your data.  Hover over the error to see
           details.
         errors_notice_mobile: You have errors in your data.  Tap over the error tooltip to see
           details.
+        next_step: Next step
         title: Clean your data
     configurations:
       update:
@@ -18,24 +22,101 @@ en:
           export your data). We'll automatically map the columns for you.
         instructions: Select continue to parse your CSV and move on to the clean step.
       mint_import:
+        preconfigured_notice: We have pre-configured your Mint import for you. Please proceed to the next step.
+        leave_empty: Leave empty
+        date_label: Date
+        amount_label: Amount
+        incomes_negative: Incomes are negative
+        incomes_positive: Incomes are positive
+        currency_label: Currency
+        format_label: Format
+        select_format: Select format
+        account_optional_label: Account (optional)
+        name_optional_label: Name (optional)
+        category_optional_label: Category (optional)
+        tags_optional_label: Tags (optional)
+        apply_configuration: Apply configuration
         date_format_label: Date format
+      account_import:
+        leave_empty: Leave empty
+        default: Default
+        entity_type_label: Entity Type
+        name_label: Name
+        balance_label: Balance
+        currency_label: Currency
+        balance_date_label: Balance Date
+        date_format_label: Date Format
+        select_format: Select format
+        apply_configuration: Apply configuration
       rule_import:
         description: Configure your rule import. Rules will be created or updated based
           on the CSV data.
         process_button: Process Rules
         process_help: Click the button below to process your CSV and generate rule rows.
       show:
+        apply_template: Apply template
         description: Select the columns that correspond to each field in your CSV.
+        manually_configure: Manually configure
+        sample_data_caption: Sample data from your uploaded CSV
+        template_configuration_description: We found a configuration from a previous import for this account. Would you like to apply it to this import?
+        template_configuration_found: Template configuration found
         title: Configure your import
       trade_import:
+        select_column: Select column
+        leave_empty: Leave empty
+        default: Default
+        date_label: Date
+        quantity_label: Quantity
+        buys_positive_qty: Buys are positive qty
+        buys_negative_qty: Buys are negative qty
+        currency_label: Currency
+        format_label: Format
+        select_format: Select format
+        ticker_label: Ticker
+        stock_exchange_code_label: Stock exchange code
+        price_label: Price
+        account_label: Account
+        name_label: Name
+        note_label: "Note:"
+        security_provider_warning: The security prices provider is not configured. Your trade imports will work, but Sure will not backfill price history. Please go to your settings to configure this.
+        apply_configuration: Apply configuration
         date_format_label: Date format
       transaction_import:
+        date_label: Date
+        amount_label: Amount
+        currency_label: Currency
+        format_label: Format
+        amount_type_strategy_label: Amount type strategy
+        amount_type_label: Amount type
+        select_column: Select column
+        select_format: Select format
+        select_strategy: Select strategy
+        select_convention: Select convention
+        select_value: Select value
+        select_type: Select type
+        default: Default
+        leave_empty: Leave empty
+        set: Set
+        as_amount_type_column: as amount type column
+        as_identifier_value: as identifier value
+        treat_identifier_as: Treat "%{identifier}" as
+        income_inflow: Income (inflow)
+        expense_outflow: Expense (outflow)
+        incomes_positive: Incomes are positive
+        incomes_negative: Incomes are negative
+        account_label: Account
+        name_label: Name
+        category_label: Category
+        tags_label: Tags
+        notes_label: Notes
+        apply_configuration: Apply configuration
         date_format_label: Date format
         rows_to_skip_label: Skip first n rows
     confirms:
       mappings:
         create_account: Create account
         csv_mapping_label: "%{mapping} in CSV"
+        next: Next
         sure_mapping_label: "%{mapping} in %{product_name}"
         no_accounts: You don't have any accounts yet. Please create an account that
           we can use for (unassigned) rows in your CSV or go back to the Clean step
@@ -59,6 +140,18 @@ en:
         tag_mapping_title: Assign your tags
     uploads:
       show:
+        overlay_title: Drop CSV to upload
+        overlay_subtitle: Your file will be uploaded automatically
+        tab_upload_csv: Upload CSV
+        tab_copy_paste: Copy & Paste
+        account_optional_label: Account (optional)
+        multi_account_import: Multi-account import
+        browse: Browse
+        browse_help: to add your CSV file here
+        submit_upload_csv: Upload CSV
+        paste_placeholder: Paste your CSV file contents here
+        sample_csv_link: Download a sample CSV
+        sample_csv_html: "%{link} to see the required CSV format"
         description: Paste or upload your CSV file below.  Please review the instructions
           in the table below before beginning.
         instructions_1: Below is an example CSV with columns available for import.
@@ -69,6 +162,15 @@ en:
         instructions_5: No commas, no currency symbols, and no parentheses in numbers.
         title: Import your data
   imports:
+    failure:
+      description: Please check your file format, any errors, and that all required fields are filled, then try again.
+      title: Import failed
+      try_again: Try again
+    importing:
+      back_to_dashboard: Back to dashboard
+      check_status: Check status
+      description: Your import is in progress. Check the imports menu for status updates or click "Check status" to refresh this page.
+      title: Import in progress
     index:
       title: Imports
       new: New Import
@@ -106,8 +208,19 @@ en:
       sources: Sources
       title: New CSV Import
     ready:
+      count: count
       description: Here's a summary of the new items that will be added to your account
         once you publish this import.
+      item: item
+      publish_import: Publish import
       title: Confirm your import data
+    revert_failure:
+      description: Please try again.
+      title: Reverting import failed
+      try_again: Try again
+    success:
+      back_to_dashboard: Back to dashboard
+      description: Your imported data has been successfully added and is now ready for use.
+      title: Import successful
     errors:
       custom_column_requires_inflow: "Custom column imports require an inflow column to be selected"

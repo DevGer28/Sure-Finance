@@ -1,0 +1,203 @@
+---
+es:
+  providers:
+    snaptrade:
+      accounts_count:
+        one: "%{count} cuenta"
+        other: "%{count} cuentas"
+      client_id_label: Client ID
+      client_id_placeholder: Ingresa tu Client ID de SnapTrade
+      client_id_update_placeholder: Ingresa un nuevo Client ID para actualizar
+      connect_button: Conectar bróker
+      connected_brokerages: 'Conectados:'
+      connection_description: Conecta tu bróker vía SnapTrade (25+ brókers compatibles)
+      connection_limit_info: El plan gratuito de SnapTrade permite 5 conexiones de
+        bróker. Elimina conexiones no usadas para liberar cupos.
+      connections_error: 'No se pudieron cargar las conexiones: %{message}'
+      consumer_key_label: Consumer Key
+      consumer_key_placeholder: Ingresa tu Consumer Key de SnapTrade
+      consumer_key_update_placeholder: Ingresa un nuevo Consumer Key para actualizar
+      delete_connection: Eliminar
+      delete_connection_body: Esto eliminará permanentemente la conexión %{brokerage}
+        de SnapTrade. Todas las cuentas de este bróker se desvincularán. Tendrás
+        que reconectar para volver a sincronizarlas.
+      delete_connection_confirm: Eliminar conexión
+      delete_connection_title: "¿Eliminar conexión de bróker?"
+      delete_orphaned_user: Eliminar
+      delete_orphaned_user_body: Esto eliminará permanentemente este registro huérfano
+        de SnapTrade y todas sus conexiones de bróker, liberando cupos de conexión.
+      delete_orphaned_user_confirm: Eliminar registro
+      delete_orphaned_user_title: "¿Eliminar registro huérfano?"
+      description: SnapTrade se conecta con más de 25 brókers importantes (Fidelity,
+        Vanguard, Schwab, Robinhood, etc.) y ofrece historial completo de operaciones
+        con etiquetas de actividad y costo base.
+      free_tier_warning: El plan gratuito incluye 5 conexiones de bróker. Las conexiones
+        adicionales requieren un plan pago de SnapTrade.
+      loading_connections: Cargando conexiones...
+      manage_connections: Administrar conexiones
+      name: SnapTrade
+      needs_linking: requiere vinculación
+      needs_setup:
+        one: "%{count} requiere configuración"
+        other: "%{count} requieren configuración"
+      no_connections: No se encontraron conexiones de bróker.
+      orphaned_connection: Conexión huérfana (no sincronizada localmente)
+      orphaned_user: Registro huérfano
+      orphaned_users_description: Estos son registros anteriores de usuarios de SnapTrade
+        que están usando tus cupos de conexión. Elimínalos para liberar cupos.
+      orphaned_users_title:
+        one: "%{count} registro huérfano"
+        other: "%{count} registros huérfanos"
+      save_button: Guardar configuración
+      setup_accounts_button: Configurar cuentas
+      setup_title: 'Instrucciones de configuración:'
+      status_connected:
+        one: "%{count} cuenta desde SnapTrade"
+        other: "%{count} cuentas desde SnapTrade"
+      status_needs_registration: Credenciales guardadas. Ve a la página de cuentas
+        para conectar brókers.
+      status_not_configured: No configurado
+      status_ready: Listo para conectar brókers
+      step_1_html: Crea una cuenta en <a href="https://dashboard.snaptrade.com"
+        target="_blank" rel="noopener noreferrer" class="text-primary underline">dashboard.snaptrade.com</a>
+      step_2: Copia tu Client ID y Consumer Key desde el panel
+      step_3: Ingresa tus credenciales abajo y haz clic en Guardar
+      step_4: Ve a la página de cuentas y usa 'Conectar otro bróker' para vincular
+        tus cuentas de inversión
+      update_button: Actualizar configuración
+  snaptrade_item:
+    brokerage_summary:
+      count:
+        one: "%{count} bróker"
+        other: "%{count} brókers"
+      none: No hay brókers conectados
+    institution_summary:
+      count:
+        one: "%{count} institución"
+        other: "%{count} instituciones"
+      none: No hay instituciones conectadas
+    sync_status:
+      no_accounts: No se encontraron cuentas
+      synced:
+        one: "%{count} cuenta sincronizada"
+        other: "%{count} cuentas sincronizadas"
+      synced_with_setup: "%{linked} sincronizadas, %{unlinked} requieren configuración"
+    syncer:
+      activities_fetching_async: Las actividades se están obteniendo en segundo plano.
+        Esto puede tardar hasta un minuto para conexiones nuevas de bróker.
+      calculating: Calculando saldos...
+      checking_config: Verificando configuración de cuentas...
+      discovering: Descubriendo cuentas...
+      importing: Importando cuentas desde SnapTrade...
+      needs_setup: "%{count} cuentas requieren configuración..."
+      processing: Procesando posiciones y actividades...
+  snaptrade_items:
+    callback:
+      no_item: No se encontró la configuración de SnapTrade.
+      success: "¡Bróker conectado! Selecciona qué cuentas quieres vincular."
+    complete_account_setup:
+      link_failed: 'No se pudieron vincular las cuentas: %{errors}'
+      no_accounts: No se seleccionaron cuentas para vincular.
+      partial_success: Se vincularon %{linked} cuenta(s). %{failed} no se pudieron
+        vincular.
+      success:
+        one: Se vinculó correctamente %{count} cuenta.
+        other: Se vincularon correctamente %{count} cuentas.
+    connect:
+      portal_error: 'No se pudo conectar con SnapTrade: %{message}'
+      registration_failed: 'No se pudo registrar en SnapTrade: %{message}'
+    connections:
+      unknown_brokerage: Bróker desconocido
+    create:
+      success: SnapTrade configurado correctamente.
+    default_name: Conexión SnapTrade
+    delete_connection:
+      api_deletion_failed: No se pudo eliminar la conexión en SnapTrade por falta
+        de credenciales. La conexión puede seguir existiendo en tu cuenta de SnapTrade.
+      failed: 'No se pudo eliminar la conexión: %{message}'
+      missing_authorization_id: Falta el ID de autorización
+      success: Conexión eliminada correctamente. Se liberó un cupo.
+    delete_orphaned_user:
+      failed: No se pudo eliminar el registro huérfano.
+      success: Registro huérfano eliminado correctamente.
+    destroy:
+      success: Se programó la eliminación de la conexión de SnapTrade.
+    link_existing_account:
+      failed: 'No se pudo vincular la cuenta: %{message}'
+      not_found: Cuenta no encontrada.
+      success: Cuenta vinculada correctamente con SnapTrade.
+    preload_accounts:
+      not_configured: SnapTrade no está configurado.
+    select_accounts:
+      not_configured: SnapTrade no está configurado.
+    select_existing_account:
+      balance_label: 'Saldo:'
+      cancel_button: Cancelar
+      connect_hint: Es posible que primero debas conectar una cuenta de corretaje.
+      header: Vincular cuenta existente
+      link_button: Vincular
+      linking_to: 'Vinculando con la cuenta:'
+      no_accounts: No hay cuentas de SnapTrade sin vincular disponibles.
+      not_found: No se encontró la cuenta o la configuración de SnapTrade.
+      settings_link: Ir a Configuración de proveedores
+      subtitle: Selecciona una cuenta de SnapTrade para vincular
+      title: Vincular con cuenta de SnapTrade
+    setup_accounts:
+      account_number: 'Cuenta:'
+      available_accounts: Cuentas disponibles
+      back_to_settings: Volver a Configuración
+      balance_label: 'Saldo:'
+      cancel_button: Cancelar
+      create_button: Crear cuentas seleccionadas
+      creating: Creando cuentas...
+      done_button: Listo
+      free_tier_note: El plan gratuito de SnapTrade permite 5 conexiones de corretaje.
+        Revisa tu panel de SnapTrade para ver el uso actual.
+      header: Configura tus cuentas de SnapTrade
+      info_activities: Historial de operaciones con etiquetas de actividad (Compra,
+        Venta, Dividendo, etc.)
+      info_cost_basis: Costo base por posición (cuando esté disponible)
+      info_history: Hasta 3 años de historial de transacciones
+      info_holdings: Posiciones con precios y cantidades actuales
+      info_title: Datos de inversión de SnapTrade
+      linked_accounts: Ya vinculadas
+      linked_to: 'Vinculada a:'
+      loading: Obteniendo cuentas desde SnapTrade...
+      loading_hint: Haz clic en Actualizar para verificar cuentas.
+      no_accounts_message: No se encontraron cuentas de corretaje. Esto puede pasar
+        si cancelaste la conexión o si tu bróker no es compatible.
+      no_accounts_title: No se encontraron cuentas
+      refresh: Actualizar
+      subtitle: Selecciona qué cuentas de corretaje deseas vincular
+      syncing: Obteniendo tus cuentas...
+      sync_start_date_help: Déjalo en blanco para importar todo el historial disponible.
+      sync_start_date_label: Importar transacciones desde
+      title: Configurar cuentas de SnapTrade
+      try_again: Conectar bróker
+    snaptrade_item:
+      accounts_need_setup:
+        one: "%{count} cuenta requiere configuración"
+        other: "%{count} cuentas requieren configuración"
+      add_another_brokerage: Conectar otro bróker
+      connect_brokerage: Conectar bróker
+      delete: Eliminar
+      deletion_in_progress: Eliminación en progreso...
+      error: Error de sincronización
+      manage_connections: Administrar conexiones
+      more_accounts_available:
+        one: "%{count} cuenta más disponible para configurar"
+        other: "%{count} cuentas más disponibles para configurar"
+      no_accounts_description: Conecta un bróker para importar tus cuentas de inversión.
+      no_accounts_title: No se detectaron cuentas
+      reconnect: Reconectar
+      requires_update: La conexión necesita actualización
+      setup_accounts_menu: Configurar cuentas
+      setup_action: Configurar cuentas
+      setup_description: Algunas cuentas de SnapTrade necesitan vincularse con cuentas
+        de Sure.
+      setup_needed: Cuentas por configurar
+      status: Última sincronización hace %{timestamp} - %{summary}
+      status_never: Nunca sincronizado
+      syncing: Sincronizando...
+    update:
+      success: Configuración de SnapTrade actualizada correctamente.

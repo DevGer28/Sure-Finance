@@ -1,9 +1,18 @@
 ---
 en:
   users:
+    user_menu:
+      changelog: Changelog
+      contact: Contact
+      feedback: Feedback
+      log_out: Log out
+      settings: Settings
+      version: Version
     destroy:
       success: Your account has been deleted.
     update:
+      ai_disabled: AI Assistant has been disabled.
+      ai_enabled: AI Assistant has been enabled successfully.
       email_change_failed: Failed to change email address.
       email_change_initiated: Please check your new email address for confirmation
         instructions.

@@ -1,0 +1,9 @@
+---
+es:
+  settings:
+    bank_sync:
+      show:
+        no_providers_description: Configura proveedores para vincular tus cuentas bancarias.
+        no_providers_title: No hay proveedores configurados
+        providers: Proveedores
+        title: Sincronización bancaria

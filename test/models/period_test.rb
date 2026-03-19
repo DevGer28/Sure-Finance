@@ -81,4 +81,16 @@ class PeriodTest < ActiveSupport::TestCase
     assert_equal 5.years.ago.to_date, period.start_date
     assert_equal Date.current, period.end_date
   end
+
+  test "period labels are localized in spanish" do
+    I18n.with_locale(:es) do
+      period = Period.from_key("last_30_days")
+      assert_equal "Últimos 30 días", period.label
+      assert_equal "vs. últimos 30 días", period.comparison_label
+
+      custom = Period.new(start_date: Date.new(2025, 1, 1), end_date: Date.new(2025, 1, 31))
+      assert_equal "Período personalizado", custom.label
+      assert_equal "Jan 01, 2025 a Jan 31, 2025", custom.comparison_label
+    end
+  end
 end
