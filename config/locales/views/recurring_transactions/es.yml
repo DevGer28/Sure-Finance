@@ -1,15 +1,15 @@
 ---
 es:
   recurring_transactions:
-    already_exists: A manual recurring transaction already exists for this pattern
-    amount_range: 'Range: %{min} to %{max}'
+    already_exists: Ya existe una transacción recurrente manual para este patrón
+    amount_range: 'Rango: %{min} a %{max}'
     badges:
       manual: Manual
     cleaned_up: Limpiadas %{count} transacciones recurrentes obsoletas
     cleanup_stale: Limpiar Obsoletos
     confirm_delete: "¿Estás seguro de que deseas eliminar esta transacción recurrente?"
-    creation_failed: Failed to create recurring transaction. Please check the transaction
-      details and try again.
+    creation_failed: No se pudo crear la transacción recurrente. Revisa los detalles
+      de la transacción y vuelve a intentarlo.
     day_of_month: Día %{day} del mes
     deleted: Transacción recurrente eliminada
     empty:
@@ -29,15 +29,15 @@ es:
       - Finalización de importaciones CSV (transacciones, operaciones, cuentas, etc.)
       - Finalización de cualquier sincronización de proveedor (Plaid, SimpleFIN, etc.)
     marked_active: Transacción recurrente marcada como activa
-    marked_as_recurring: Transaction marked as recurring
+    marked_as_recurring: Transacción marcada como recurrente
     marked_inactive: Transacción recurrente marcada como inactiva
     projected: Proyectado
     recurring: Recurrente
     settings:
-      enable_description: Automatically detect recurring transaction patterns and
-        show upcoming projected transactions.
-      enable_label: Enable Recurring Transactions
-    settings_updated: Recurring transactions settings updated
+      enable_description: Detecta automáticamente patrones de transacciones recurrentes
+        y muestra próximas transacciones proyectadas.
+      enable_label: Activar transacciones recurrentes
+    settings_updated: La configuración de transacciones recurrentes se actualizó
     status:
       active: Activa
       inactive: Inactiva
@@ -50,5 +50,5 @@ es:
       next_date: Próxima Fecha
       status: Estado
     title: Transacciones Recurrentes
-    unexpected_error: An unexpected error occurred while creating the recurring transaction
+    unexpected_error: Ocurrió un error inesperado al crear la transacción recurrente
     upcoming: Próximas Transacciones Recurrentes

@@ -27,7 +27,7 @@ es:
         edit: Edit
         submit: Submit
       confirmations:
-        destroy: Are you sure?
+        destroy: "¿Estás seguro?"
       edit:
         title: Edit application
       form:
@@ -81,7 +81,7 @@ es:
       buttons:
         revoke: Revoke
       confirmations:
-        revoke: Are you sure?
+        revoke: "¿Estás seguro?"
       index:
         application: Application
         created_at: Created At
@@ -151,7 +151,7 @@ es:
       admin:
         nav:
           applications: Applications
-          home: Home
+          home: Inicio
           oauth2_provider: OAuth2 Provider
         title: Doorkeeper
       application:

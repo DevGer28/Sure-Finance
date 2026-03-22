@@ -188,6 +188,7 @@ en:
       choose_label: (optional)
       change: Change photo
     providers:
+      not_authorized: Not authorized
       provider_form:
         env_configured_message: Configuration can be set via environment variables or overridden below.
         field_descriptions: "Field descriptions:"
@@ -205,6 +206,10 @@ en:
         mercury_title: Mercury (beta)
         coinbase_title: Coinbase (beta)
         snaptrade_title: SnapTrade (beta)
+      update:
+        success: Provider settings updated successfully
+        no_changes: No changes were made
+        failure: "Failed to update provider settings: %{error}"
       enable_banking_panel:
         setup_instructions: "Setup instructions:"
         enable_banking_link: Enable Banking

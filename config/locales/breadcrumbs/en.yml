@@ -1,6 +1,23 @@
 ---
 en:
   breadcrumbs:
+    accounts: Accounts
+    ai_prompts: AI Prompts
+    api_key: API Key
+    categories: Categories
+    dashboard: Dashboard
     exports: Exports
+    guides: Guides
     home: Home
     imports: Imports
+    llm_usage: LLM Usage
+    merchants: Merchants
+    profile_info: Profile Info
+    recurring_transactions: Recurring Transactions
+    reports: Reports
+    rules: Rules
+    security: Security
+    self_hosting: Self-Hosting
+    sync_providers: Sync Providers
+    tags: Tags
+    transactions: Transactions

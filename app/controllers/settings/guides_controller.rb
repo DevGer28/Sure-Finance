@@ -2,10 +2,7 @@ class Settings::GuidesController < ApplicationController
   layout "settings"
 
   def show
-    @breadcrumbs = [
-      [ "Home", root_path ],
-      [ "Guides", nil ]
-    ]
+    @breadcrumbs = [ breadcrumb_root, breadcrumb_item(:guides) ]
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
       autolink: true,
       tables: true,

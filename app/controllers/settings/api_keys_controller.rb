@@ -6,10 +6,7 @@ class Settings::ApiKeysController < ApplicationController
   before_action :set_api_key, only: [ :show, :destroy ]
 
   def show
-    @breadcrumbs = [
-      [ "Home", root_path ],
-      [ "API Key", nil ]
-    ]
+    @breadcrumbs = [ breadcrumb_root, breadcrumb_item(:api_key) ]
     @current_api_key = @api_key
   end
 
@@ -30,7 +27,7 @@ class Settings::ApiKeysController < ApplicationController
     existing_keys.each { |key| key.update_column(:revoked_at, Time.current) }
 
     if @api_key.save
-      flash[:notice] = "Your API key has been created successfully"
+      flash[:notice] = t("settings.api_keys_controller.success")
       redirect_to settings_api_key_path
     else
       # Restore existing keys if new key creation failed
@@ -41,9 +38,9 @@ class Settings::ApiKeysController < ApplicationController
 
   def destroy
     if @api_key&.revoke!
-      flash[:notice] = "API key has been revoked successfully"
+      flash[:notice] = t("settings.api_keys_controller.revoked_successfully")
     else
-      flash[:alert] = "Failed to revoke API key"
+      flash[:alert] = t("settings.api_keys_controller.revoke_failed")
     end
     redirect_to settings_api_key_path
   end

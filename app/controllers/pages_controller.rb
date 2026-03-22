@@ -19,7 +19,7 @@ class PagesController < ApplicationController
 
     @dashboard_sections = build_dashboard_sections
 
-    @breadcrumbs = [ [ "Home", root_path ], [ "Dashboard", nil ] ]
+    @breadcrumbs = [ breadcrumb_root, breadcrumb_item(:dashboard) ]
   end
 
   def update_preferences

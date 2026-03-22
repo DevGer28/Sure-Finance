@@ -1,6 +1,23 @@
 ---
 es:
   breadcrumbs:
+    accounts: Cuentas
+    ai_prompts: Indicaciones de IA
+    api_key: Clave API
+    categories: Categorías
+    dashboard: Panel
     exports: Exportaciones
+    guides: Guías
     home: Inicio
     imports: Importaciones
+    llm_usage: Uso de LLM
+    merchants: Comerciantes
+    profile_info: Información del Perfil
+    recurring_transactions: Transacciones Recurrentes
+    reports: Reportes
+    rules: Reglas
+    security: Seguridad
+    self_hosting: Autoalojamiento
+    sync_providers: Proveedores de sincronización
+    tags: Etiquetas
+    transactions: Transacciones

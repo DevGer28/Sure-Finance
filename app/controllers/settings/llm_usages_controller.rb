@@ -2,10 +2,7 @@ class Settings::LlmUsagesController < ApplicationController
   layout "settings"
 
   def show
-    @breadcrumbs = [
-      [ "Home", root_path ],
-      [ "LLM Usage", nil ]
-    ]
+    @breadcrumbs = [ breadcrumb_root, breadcrumb_item(:llm_usage) ]
     @family = Current.family
 
     # Get date range from params or default to last 30 days

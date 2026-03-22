@@ -47,7 +47,7 @@ es:
         cost_estimate_note: Los costos se estiman según los precios de OpenAI de 2025. Los costos reales pueden variar. El precio es por 1 millón de tokens y varía por modelo. Los modelos personalizados o autoalojados mostrarán "N/A" y no se incluyen en los costos totales.
     hostings:
       ensure_admin:
-        not_authorized: Not authorized
+        not_authorized: No autorizado
     payments:
       show:
         page_title: Pago
@@ -140,6 +140,7 @@ es:
           prellenado.
         save: Guardar
     providers:
+      not_authorized: No autorizado
       provider_form:
         env_configured_message: La configuración puede establecerse con variables
           de entorno o sobrescribirse abajo.
@@ -158,6 +159,10 @@ es:
         mercury_title: Mercury (beta)
         coinbase_title: Coinbase (beta)
         snaptrade_title: SnapTrade (beta)
+      update:
+        success: Configuración de proveedores actualizada con éxito
+        no_changes: No se realizaron cambios
+        failure: "No se pudo actualizar la configuración de proveedores: %{error}"
       enable_banking_panel:
         setup_instructions: "Instrucciones de configuración:"
         enable_banking_link: Enable Banking
@@ -262,48 +267,51 @@ es:
         status_not_configured: No configurado
         accounts_tab: Cuentas
       coinbase_panel:
-        api_key_label: API Key
-        api_key_placeholder: Enter your Coinbase API key
-        api_secret_label: API Secret
-        api_secret_placeholder: Enter your Coinbase API secret
-        connect_button: Connect Coinbase
-        disconnect_confirm: Are you sure you want to disconnect this Coinbase connection?
-          Your synced accounts will become manual accounts.
-        setup_instructions: 'To connect Coinbase:'
-        status_connected: Coinbase is connected and syncing your crypto holdings.
-        status_not_connected: Not connected. Enter your API credentials above to get
-          started.
-        step1_html: Go to <a href="https://portal.cdp.coinbase.com/projects/api-keys"
-          target="_blank" class="text-primary underline">Coinbase API Settings</a>
-        step2: Create a new API key with read-only permissions (view accounts, view
-          transactions)
-        step3: Copy your API key and API secret and paste them below
-        sync: Sync
-        syncing: Syncing...
+        api_key_label: Clave API
+        api_key_placeholder: Ingresa tu clave API de Coinbase
+        api_secret_label: Secreto API
+        api_secret_placeholder: Ingresa tu secreto API de Coinbase
+        connect_button: Conectar Coinbase
+        disconnect_confirm: "¿Seguro que deseas desconectar esta conexión de Coinbase?
+          Tus cuentas sincronizadas pasarán a ser cuentas manuales."
+        setup_instructions: "Para conectar Coinbase:"
+        status_connected: Coinbase está conectado y sincronizando tus tenencias de cripto.
+        status_not_connected: No está conectado. Ingresa tus credenciales API arriba
+          para comenzar.
+        step1_html: Ve a <a href="https://portal.cdp.coinbase.com/projects/api-keys"
+          target="_blank" class="text-primary underline">la configuración de la
+          API de Coinbase</a>
+        step2: Crea una nueva clave API con permisos de solo lectura (ver cuentas,
+          ver transacciones)
+        step3: Copia tu clave API y tu secreto API y pégalos abajo
+        sync: Sincronizar
+        syncing: Sincronizando...
       encryption_error:
-        message: Active Record encryption keys are not configured. Please ensure the
-          encryption credentials (active_record_encryption.primary_key, active_record_encryption.deterministic_key,
-          and active_record_encryption.key_derivation_salt) are properly set up in
-          your Rails credentials or environment variables before using sync providers.
-        title: Encryption Configuration Required
+        message: Las claves de cifrado de Active Record no están configuradas. Asegúrate
+          de que las credenciales de cifrado (active_record_encryption.primary_key,
+          active_record_encryption.deterministic_key y active_record_encryption.key_derivation_salt)
+          estén correctamente configuradas en tus credenciales de Rails o variables
+          de entorno antes de usar proveedores de sincronización.
+        title: Se requiere configuración de cifrado
     securities:
       show:
         page_title: Seguridad
-        sso_confirm_body: Are you sure you want to disconnect your %{provider} account?
-          You can reconnect it later by signing in with that provider again.
-        sso_confirm_button: Disconnect
-        sso_confirm_title: Disconnect Account?
-        sso_connect_hint: Log out and sign in with an SSO provider to connect an account.
-        sso_disconnect: Disconnect
-        sso_last_used: Last used
-        sso_never: Never
-        sso_no_email: No email
-        sso_no_identities: No SSO accounts connected
-        sso_subtitle: Manage your single sign-on account connections
-        sso_title: Connected Accounts
-        sso_warning_message: This is your only login method. You should set a password
-          in your security settings before disconnecting, otherwise you may be locked
-          out of your account.
+        sso_confirm_body: "¿Estás seguro de que deseas desconectar tu cuenta de %{provider}?
+          Podrás volver a conectarla más adelante iniciando sesión de nuevo con ese proveedor."
+        sso_confirm_button: Desconectar
+        sso_confirm_title: "¿Desconectar cuenta?"
+        sso_connect_hint: Cierra sesión e inicia sesión con un proveedor SSO para
+          conectar una cuenta.
+        sso_disconnect: Desconectar
+        sso_last_used: Último uso
+        sso_never: Nunca
+        sso_no_email: Sin correo electrónico
+        sso_no_identities: No hay cuentas SSO conectadas
+        sso_subtitle: Administra tus conexiones de cuenta con inicio de sesión único
+        sso_title: Cuentas conectadas
+        sso_warning_message: Este es tu único método de inicio de sesión. Deberías
+          establecer una contraseña en tu configuración de seguridad antes de desconectarlo;
+          de lo contrario, podrías quedarte fuera de tu cuenta.
     settings_nav:
       accounts_label: Cuentas
       advanced_section_title: Avanzado
@@ -345,5 +353,5 @@ es:
   views:
     settings:
       payments:
-        cancellation: Your contribution ends on %{date}.
+        cancellation: Tu contribución termina el %{date}.
         renewal: Tu contribución continúa el %{date}.

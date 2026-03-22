@@ -6,10 +6,7 @@ class Settings::HostingsController < ApplicationController
   before_action :ensure_admin, only: [ :update, :clear_cache ]
 
   def show
-    @breadcrumbs = [
-      [ "Home", root_path ],
-      [ "Self-Hosting", nil ]
-    ]
+    @breadcrumbs = [ breadcrumb_root, breadcrumb_item(:self_hosting) ]
 
     # Determine which providers are currently selected
     exchange_rate_provider = ENV["EXCHANGE_RATE_PROVIDER"].presence || Setting.exchange_rate_provider
