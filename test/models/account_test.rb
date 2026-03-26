@@ -86,8 +86,16 @@ class AccountTest < ActiveSupport::TestCase
 
     # Test with nil subtype
     account.accountable.update!(subtype: nil)
-    assert_equal "Investments", account.short_subtype_label
-    assert_equal "Investments", account.long_subtype_label
+    assert_equal I18n.t("accounts.types.investment"), account.short_subtype_label
+    assert_equal I18n.t("accounts.types.investment"), account.long_subtype_label
+  end
+
+  test "display_name uses account type translations" do
+    I18n.with_locale(:es) do
+      assert_equal "Efectivo", Depository.display_name
+      assert_equal "Inversión", Investment.display_name
+      assert_equal "Tarjeta de crédito", CreditCard.display_name
+    end
   end
 
   # Tax treatment tests (TaxTreatable concern)

@@ -59,7 +59,7 @@ module Accountable
     end
 
     def display_name
-      self.name.pluralize.titleize
+      I18n.t("accounts.types.#{model_name.i18n_key}", default: name.titleize)
     end
 
     def balance_money(family)
