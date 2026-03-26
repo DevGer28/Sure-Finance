@@ -12,6 +12,19 @@ es:
       term_months_placeholder: '360'
     new:
       title: Introduce los detalles del préstamo
+    subtypes:
+      mortgage:
+        long: Hipoteca
+        short: Hipoteca
+      student:
+        long: Préstamo estudiantil
+        short: Estudiantil
+      auto:
+        long: Préstamo automotriz
+        short: Automotriz
+      other:
+        long: Otro préstamo
+        short: Otro
     overview:
       edit_loan_details: Editar detalles del préstamo
       interest_rate: Tasa de interés

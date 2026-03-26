@@ -8,3 +8,19 @@ en:
       subtype_prompt: Select account type
     new:
       title: Enter account balance
+    subtypes:
+      checking:
+        long: Checking Account
+        short: Checking
+      savings:
+        long: Savings Account
+        short: Savings
+      hsa:
+        long: Health Savings Account
+        short: HSA
+      cd:
+        long: Certificate of Deposit
+        short: CD
+      money_market:
+        long: Money Market Account
+        short: Money Market

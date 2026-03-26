@@ -175,7 +175,7 @@ class SimplefinItemsController < ApplicationController
     @subtype_options = {
       "Depository" => {
         label: "Account Subtype:",
-        options: Depository::SUBTYPES.map { |k, v| [ v[:long], k ] }
+        options: Depository.subtype_options_for_select(format: :long)
       },
       "CreditCard" => {
         label: "",
@@ -184,11 +184,11 @@ class SimplefinItemsController < ApplicationController
       },
       "Investment" => {
         label: "Investment Type:",
-        options: Investment::SUBTYPES.map { |k, v| [ v[:long], k ] }
+        options: Investment.subtype_options_for_select(format: :long)
       },
       "Loan" => {
         label: "Loan Type:",
-        options: Loan::SUBTYPES.map { |k, v| [ v[:long], k ] }
+        options: Loan.subtype_options_for_select(format: :long)
       },
       "Crypto" => {
         label: nil,

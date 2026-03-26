@@ -47,6 +47,25 @@ en:
       year_built_placeholder: '2000'
     new:
       title: Enter property details
+    subtypes:
+      single_family_home:
+        long: Single Family Home
+        short: Single Family Home
+      multi_family_home:
+        long: Multi-Family Home
+        short: Multi-Family Home
+      condominium:
+        long: Condominium
+        short: Condo
+      townhouse:
+        long: Townhouse
+        short: Townhouse
+      investment_property:
+        long: Investment Property
+        short: Investment Property
+      second_home:
+        long: Second Home
+        short: Second Home
     overview:
       living_area: Living Area
       market_value: Market Value

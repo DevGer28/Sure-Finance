@@ -47,6 +47,25 @@ es:
       year_built_placeholder: '2000'
     new:
       title: Introduzca los detalles de la propiedad
+    subtypes:
+      single_family_home:
+        long: Casa unifamiliar
+        short: Casa unifamiliar
+      multi_family_home:
+        long: Vivienda multifamiliar
+        short: Multifamiliar
+      condominium:
+        long: Condominio
+        short: Condominio
+      townhouse:
+        long: Casa adosada
+        short: Casa adosada
+      investment_property:
+        long: Propiedad de inversión
+        short: Inversión
+      second_home:
+        long: Segunda vivienda
+        short: Segunda vivienda
     overview:
       living_area: Área Habitable
       market_value: Valor de Mercado

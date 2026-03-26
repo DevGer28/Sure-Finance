@@ -54,6 +54,12 @@ module Accountable
       subtype_label_for(subtype, format: :long)
     end
 
+    def subtype_options_for_select(format: :long)
+      self::SUBTYPES.keys.map do |subtype|
+        [ subtype_label_for(subtype, format: format), subtype ]
+      end
+    end
+
     def favorable_direction
       classification == "asset" ? "up" : "down"
     end

@@ -21,50 +21,50 @@ es:
         long: 457(b)
         short: 457(b)
       529_plan:
-        long: 529 Education Savings Plan
-        short: 529 Plan
+        long: Plan de ahorro educativo 529
+        short: Plan 529
       angel:
-        long: Angel Investment
-        short: Angel
+        long: Inversión ángel
+        short: Ángel
       brokerage:
-        long: Brokerage
-        short: Brokerage
+        long: Cuenta de corretaje
+        short: Corretaje
       hsa:
-        long: Health Savings Account
+        long: Cuenta de ahorros para gastos médicos
         short: HSA
       ira:
-        long: Traditional IRA
+        long: IRA tradicional
         short: IRA
       isa:
-        long: Individual Savings Account
+        long: Cuenta individual de ahorro
         short: ISA
       lira:
-        long: Locked-In Retirement Account
+        long: Cuenta de jubilación bloqueada
         short: LIRA
       lisa:
-        long: Lifetime ISA
+        long: ISA vitalicia
         short: LISA
       mutual_fund:
-        long: Mutual Fund
-        short: Mutual Fund
+        long: Fondo mutuo
+        short: Fondo mutuo
       other:
-        long: Other Investment
-        short: Other
+        long: Otra inversión
+        short: Otra
       pea:
         long: Plan d'Épargne en Actions
         short: PEA
       pension:
-        long: Pension
-        short: Pension
+        long: Pensión
+        short: Pensión
       pillar_3a:
-        long: Private Pension (Pillar 3a)
+        long: Pensión privada (pilar 3a)
         short: Pillar 3a
       resp:
-        long: Registered Education Savings Plan
+        long: Plan registrado de ahorro educativo
         short: RESP
       retirement:
-        long: Retirement Account
-        short: Retirement
+        long: Cuenta de jubilación
+        short: Jubilación
       riester:
         long: Riester-Rente
         short: Riester
@@ -75,10 +75,10 @@ es:
         long: Roth IRA
         short: Roth IRA
       rrif:
-        long: Registered Retirement Income Fund
+        long: Fondo registrado de ingresos para el retiro
         short: RRIF
       rrsp:
-        long: Registered Retirement Savings Plan
+        long: Plan registrado de ahorro para el retiro
         short: RRSP
       sep_ira:
         long: SEP IRA
@@ -87,32 +87,32 @@ es:
         long: SIMPLE IRA
         short: SIMPLE IRA
       sipp:
-        long: Self-Invested Personal Pension
+        long: Pensión personal autogestionada
         short: SIPP
       smsf:
-        long: Self-Managed Super Fund
+        long: Fondo de jubilación autogestionado
         short: SMSF
       super:
-        long: Superannuation
+        long: Fondo de jubilación
         short: Super
       tfsa:
-        long: Tax-Free Savings Account
+        long: Cuenta de ahorro libre de impuestos
         short: TFSA
       trust:
-        long: Trust
-        short: Trust
+        long: Fideicomiso
+        short: Fideicomiso
       tsp:
-        long: Thrift Savings Plan
+        long: Plan de ahorro Thrift
         short: TSP
       ugma:
-        long: UGMA Custodial Account
+        long: Cuenta de custodia UGMA
         short: UGMA
       utma:
-        long: UTMA Custodial Account
+        long: Cuenta de custodia UTMA
         short: UTMA
       workplace_pension_uk:
-        long: Workplace Pension
-        short: Pension
+        long: Pensión laboral
+        short: Pensión
     value_tooltip:
       cash: Efectivo
       holdings: Inversiones

@@ -12,6 +12,19 @@ en:
       term_months_placeholder: '360'
     new:
       title: Enter loan details
+    subtypes:
+      mortgage:
+        long: Mortgage
+        short: Mortgage
+      student:
+        long: Student Loan
+        short: Student
+      auto:
+        long: Auto Loan
+        short: Auto
+      other:
+        long: Other Loan
+        short: Other
     overview:
       edit_loan_details: Edit loan details
       interest_rate: Interest Rate
